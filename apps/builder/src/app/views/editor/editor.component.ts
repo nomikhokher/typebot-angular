@@ -3,7 +3,7 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem, copyArrayItem} from '@a
 import { jsPlumb } from 'jsplumb';
 
 export interface Block {
-  id ?: number | string,
+  id : string,
   name ?: string,
   position ?: any,
   endpoint ?: any
@@ -79,7 +79,7 @@ export class EditorComponent implements AfterViewInit, OnDestroy {
 
   blocks : Block[] = [
     {
-      id: 0,
+      id: 'start',
       name: 'start',
       position : {
         x : 320,
@@ -90,7 +90,18 @@ export class EditorComponent implements AfterViewInit, OnDestroy {
       }
     },
     {
-      id: 200,
+      id: 'end',
+      name: 'end',
+      position : {
+        x : 420,
+        y : 120,
+      },
+      endpoint : {
+        canvas : null
+      }
+    },
+    {
+      id: 'nodeA',
       name: 'nodeA',
       position : {
         x : 520,
@@ -101,7 +112,7 @@ export class EditorComponent implements AfterViewInit, OnDestroy {
       }
     },
     {
-      id: 300,
+      id: 'nodeB',
       name: 'nodeB',
       position : {
         x : 720,
@@ -115,25 +126,81 @@ export class EditorComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
     this.jsPlumbInstance = jsPlumb.getInstance();
-    // this.blocks = this.blocks.map((b) => ({
+    // this.blocks = this.blocks.map((b) => { console.log(document.getElementById(b.id)); return {
     //   ...b,
     //   endpoint : this.jsPlumbInstance.addEndpoint(
-    //     'block-endpoint-'+b.id, 
-    //     { anchor: "LeftMiddle" },
-    //     { isTarget: true }
+    //     b.id || '', 
+    //     { 
+    //       connector: [
+    //         'Flowchart',
+    //         { stub: [212, 67], cornerRadius: 1, alwaysRespectStubs: true },
+    //       ],
+    //       paintStyle: { stroke: '#456', strokeWidth: 4 },
+    //       anchor: "RightMiddle",
+    //       overlays: [
+    //         [
+    //           'Label',
+    //           {
+    //             location: 0.5,
+    //             cssClass: 'connectingConnectorLabel',
+    //           },
+    //         ],
+    //       ],
+    //     },
+    //     { isSource:true, isTarget:true }
     //   )
-    // }))
+    // }})
+
     this.jsPlumbInstance.addEndpoint(
-      '0', 
-      { anchor: "LeftMiddle" },
-      { isTarget: true }
-    );
+      'end', 
+      { 
+        connector: [
+          'Flowchart',
+          { stub: [212, 67], cornerRadius: 1, alwaysRespectStubs: true },
+        ],
+        paintStyle: { stroke: '#456', strokeWidth: 4 },
+        anchor: "RightMiddle",
+        overlays: [
+          [
+            'Label',
+            {
+              location: 0.5,
+              cssClass: 'connectingConnectorLabel',
+            },
+          ],
+        ],
+      },
+      { isSource:true, isTarget:true }
+    )
+
+    this.jsPlumbInstance.addEndpoint(
+      'start', 
+      { 
+        connector: [
+          'Flowchart',
+          { stub: [212, 67], cornerRadius: 1, alwaysRespectStubs: true },
+        ],
+        paintStyle: { stroke: '#456', strokeWidth: 4 },
+        anchor: "RightMiddle",
+        overlays: [
+          [
+            'Label',
+            {
+              location: 0.5,
+              cssClass: 'connectingConnectorLabel',
+            },
+          ],
+        ],
+      },
+      { isSource:true, isTarget:true }
+    )
 
     this.jsPlumbInstance.bind("endpointClick", function(endpoint :any , originalEvent :any) {
       console.log(endpoint,originalEvent)
     });
-    this.jsPlumbInstance.bind("mouseup", function(endpoint :any , originalEvent :any){
-      console.log(endpoint,originalEvent)
+    this.jsPlumbInstance.bind("mousedown", (endpoint :any , originalEvent :any) => {
+      console.warn('mousedown',{originalEvent,endpoint});
+      this.endpointMouseDown(originalEvent,endpoint);
     });
     // this.jsPlumbInstance.bind('beforeDrop', (params : any) => {
     //   this.jsPlumbInstance.getConnections().map((connection : any) => {
@@ -156,7 +223,7 @@ export class EditorComponent implements AfterViewInit, OnDestroy {
     }
   }
 
-  endpointMouseDown(eventMouseDown: any){
+  endpointMouseDown(eventMouseDown: any, endpoint ?: any){
     let endpoint_id = eventMouseDown.target.getAttribute('id');
     let block_id = endpoint_id.split('-')[endpoint_id.split('-').length-1];
     console.warn("the user mouseDown on endpoint.")
@@ -197,7 +264,7 @@ export class EditorComponent implements AfterViewInit, OnDestroy {
     } else {
       this.blocks.push({
         ...this.toolbar[event.previousIndex],
-        id : Math.random(),
+        id : this.toolbar[event.previousIndex].name,
         position : {
           x : event.dropPoint.x,
           y : event.dropPoint.y,
