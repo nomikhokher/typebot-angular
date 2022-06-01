@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-
+// import { Preferences } from './preferences/preferences.component';
 @Component({
   selector: 'dashboard',
   templateUrl: './dashboard.component.html',
@@ -10,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 export class Dashboard implements OnInit {
   constructor(private router: Router) {}
   popup: boolean = false;
+  myAccount: boolean = true;
+  myPreference: boolean = false;
   ngOnInit(): void {
     this.popup = false;
   }
@@ -19,5 +20,16 @@ export class Dashboard implements OnInit {
   }
   popUpSet() {
     this.popup = true;
+  }
+  myAccountDetail() {
+    console.log('my account');
+    this.myAccount = true;
+    this.myPreference = false;
+  }
+  myPreferenceDetail() {
+    console.log('my prefrence');
+
+    this.myAccount = false;
+    this.myPreference = true;
   }
 }
