@@ -1,8 +1,8 @@
-<div class="mx-auto dashboard ">
-  <header class="w-full mx-auto header">
-    <div class="">
-      <a href="#" class="w-8">
-        <svg viewBox="0 0 500 500" focusable="false" class="chakra-icon css-1mj1o4f">
+<div class="w-full py-5 mb-8 border-b">
+  <header class="w-full mx-auto lg:max-w-5xl">
+    <div class="flex items-center justify-between">
+      <a href="" class="w-10 h-10">
+        <svg viewBox="0 0 500 500" focusable="false" class="w-full">
           <rect width="500" height="500" rx="75" fill="#0042DA"></rect>
           <rect x="438.709" y="170.968" width="64.5161" height="290.323" rx="32.2581"
             transform="rotate(90 438.709 170.968)" fill="#FF8E20"></rect>
@@ -16,86 +16,88 @@
             fill="white"></path>
         </svg>
       </a>
-      <div class="header-btn">
-        <button (click)="popUpSet()" class="rounded-none sign-up-btn">
+      <div class="flex items-center justify-end w-full gap-4 header-btn">
+        <button (click)="popUpSet()" class="flex items-center gap-2 px-8 py-2 font-medium bg-gray-100 rounded-lg sign-up-btn hover:bg-gray-200">
+          <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4" stroke-width="2px"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" fill="none">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path
+              d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+            </path>
+          </svg>
           <span class="b-icon">
-            <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-1k8v1e7" stroke-width="2px"
-              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="3"></circle>
-              <path
-                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
-              </path>
-            </svg>
-          </span>Settings & Members
+            Settings & Members
+          </span>
         </button>
-        <div class="drop">
-          <button (click)="menuOffOn()" class="rounded-none sign-up-btn">
-            <span class="b-icon">
-              <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-1x41ssi" stroke-width="2px"
-                stroke-linecap="round" stroke-linejoin="round">
-                <line x1="22" y1="12" x2="2" y2="12"></line>
-                <path
-                  d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z">
-                </path>
-                <line x1="6" y1="16" x2="6.01" y2="16"></line>
-                <line x1="10" y1="16" x2="10.01" y2="16"></line>
-              </svg>
-            </span>example's workspace
-          </button>
-          <div>
-            <ul *ngIf="menu" class="dropdown">
-              <li>
-                <a href="#">
-                  <span>
-                    <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-cxumsd" stroke-width="2px"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <line x1="22" y1="12" x2="2" y2="12"></line>
-                      <path
-                        d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z">
-                      </path>
-                      <line x1="6" y1="16" x2="6.01" y2="16"></line>
-                      <line x1="10" y1="16" x2="10.01" y2="16"></line>
-                    </svg>
-                  </span> nomikhokher's workspace </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span>
-                    <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon chakra-menu__icon css-1k8v1e7"
-                      stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <line x1="12" y1="5" x2="12" y2="19"></line>
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                    </svg> </span>New workspace </a>
-              </li>
-              <li class="logout">
-                <a href="#">
-                  <span>
-                    <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon chakra-menu__icon css-1k8v1e7"
-                      stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                      <polyline points="16 17 21 12 16 7"></polyline>
-                      <line x1="21" y1="12" x2="9" y2="12"></line>
-                    </svg>
-                  </span>
-                  Log out </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <button (click)="menuOffOn()" class="flex items-center gap-2 px-8 py-2 font-medium border rounded-lg sign-up-btn hover:bg-gray-100">
+          <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4" fill="none" stroke-width="2px"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="12" x2="2" y2="12"></line>
+            <path
+              d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z">
+            </path>
+            <line x1="6" y1="16" x2="6.01" y2="16"></line>
+            <line x1="10" y1="16" x2="10.01" y2="16"></line>
+          </svg>
+          <span class="b-icon">
+            example's workspace
+          </span>
+        </button>
+        <ul *ngIf="menu" class="dropdown">
+          <li>
+            <a href="#">
+              <span>
+                <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-cxumsd" stroke-width="2px"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="12" x2="2" y2="12"></line>
+                  <path
+                    d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z">
+                  </path>
+                  <line x1="6" y1="16" x2="6.01" y2="16"></line>
+                  <line x1="10" y1="16" x2="10.01" y2="16"></line>
+                </svg>
+              </span> nomikhokher's workspace </a>
+          </li>
+          <li>
+            <a href="#">
+              <span>
+                <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon chakra-menu__icon css-1k8v1e7"
+                  stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg> </span>New workspace </a>
+          </li>
+          <li class="logout">
+            <a href="#">
+              <span>
+                <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon chakra-menu__icon css-1k8v1e7"
+                  stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                  <polyline points="16 17 21 12 16 7"></polyline>
+                  <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+              </span>
+              Log out </a>
+          </li>
+        </ul>
       </div>
     </div>
   </header>
+</div>
 
-  <div class="w-full mx-auto four-boxes">
-    <button (click)="popUpSet1()" class="rounded-none sign-up-btn"><svg viewBox="0 0 24 24" focusable="false"
-        class="chakra-icon b-icon" stroke-width="2px" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="22" y1="12" x2="2" y2="12"></line>
-        <path
-          d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z">
-        </path>
-        <line x1="6" y1="16" x2="6.01" y2="16"></line>
-        <line x1="10" y1="16" x2="10.01" y2="16"></line>
-      </svg>example's workspace <span class="b-label">Pro</span></button>
+<div class="w-full mx-auto lg:max-w-5xl">
+  <div class="w-full">
+    <button (click)="popUpSet1()" class="flex items-center gap-2 px-6 py-1 font-medium bg-gray-100 rounded-lg sign-up-btn hover:bg-gray-200">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 10.5v6m3-3H9m4.06-7.19l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+      </svg>
+        Create a Folder
+        <span class="p-1 bg-gray-100 rounded-md">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+          </svg>
+        </span>
+    </button>
   </div>
 
   <div class="flex flex-row gap-4 btn-h">
@@ -109,11 +111,11 @@
         <h2 class="text-white" style="color:#fff;">Create a typebot</h2>
       </button>
     </div>
-    <div *ngFor="let typebot of saveTypebotArray" class="basis-1/4 col">
-      <div class="flex items-center justify-between px-4">
-        <button type="button" class="chakra-button css-1m4rxa3" aria-label="Drag">
-          <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-1k8v1e7" stroke-width="2px"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <div *ngFor="let typebot of saveTypebotArray" class="p-6 basis-1/4 border rounded-lg min-h-[250px] hover:bg-gray-100 cursor-pointer">
+      <div class="flex items-center justify-between">
+        <button type="button" class="w-5 h-5">
+          <svg viewBox="0 0 24 24" focusable="false" class="w-full" stroke-width="2px"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" fill="none">
             <circle cx="12" cy="9" r="1"></circle>
             <circle cx="19" cy="9" r="1"></circle>
             <circle cx="5" cy="9" r="1"></circle>
@@ -123,37 +125,37 @@
           </svg>
         </button>
         <span *ngIf="false">Live</span>
-        <button type="button" class="chakra-button chakra-menu__menu-button css-1bv7he3" aria-label="Show My typebot menu"
-          data-testid="more-button" id="menu-button-:rd:" aria-expanded="false" aria-haspopup="menu"
-          aria-controls="menu-list-:rd:">
-          <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-1k8v1e7" stroke-width="2px"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <button type="button" class="p-1 border rounded-md w-7 h-7">
+          <svg viewBox="0 0 24 24" focusable="false" class="w-full" stroke-width="2px"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" fill="none">
             <circle cx="12" cy="12" r="1"></circle>
             <circle cx="12" cy="5" r="1"></circle>
             <circle cx="12" cy="19" r="1"></circle>
           </svg>
         </button>
       </div>
-      <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon c-svg" stroke-width="2px" stroke-linecap="round"
-        stroke-linejoin="round">
-        <path
-          d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
-        </path>
-      </svg>
-      <h2>My typebot</h2>
+      <div class="flex flex-col items-center justify-center h-full pb-14 gap-y-4">
+        <svg viewBox="0 0 24 24" focusable="false" class="w-8 h-8" stroke-width="2px" stroke-linecap="round"
+          stroke-linejoin="round" fill="none">
+          <path
+            d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+          </path>
+        </svg>
+        <h2 class="font-medium">My typebot</h2>
+      </div>
     </div>
   </div>
 
   <div *ngIf="popup" class="">
     <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-      <div class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75"></div>
+      <div (click)="popup = false" class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75"></div>
       <div (click)="ClickedOut($event)" class="fixed inset-0 z-10 overflow-y-auto">
         <div class="flex items-end justify-center min-h-full p-4 text-center sm:items-center sm:p-0">
           <div (click)="ClickedOut($event)" class="flex bg-white modal-box">
             <div class="w-1/4 sidebar ">
               <a>example@email.com</a>
               <button (click)="myAccount()" class="rounded-none active">
-                <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-1k8v1e7" stroke-width="2px"
+                <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4" fill="none" stroke-width="2px"
                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <circle cx="12" cy="12" r="3"></circle>
                   <path
@@ -163,7 +165,7 @@
                 My Account
               </button>
               <button (click)="myPreference()" class="rounded-none ">
-                <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-1k8v1e7" stroke-width="2px"
+                <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4" fill="none" stroke-width="2px"
                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <circle cx="12" cy="12" r="3"></circle>
                   <path
@@ -174,7 +176,7 @@
               </button>
               <h3>Workspace</h3>
               <button (click)="mySetting()" class="rounded-none ">
-                <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-18myi7" stroke-width="2px"
+                <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4" fill="none" stroke-width="2px"
                   stroke-linecap="round" stroke-linejoin="round">
                   <line x1="22" y1="12" x2="2" y2="12"></line>
                   <path
@@ -186,7 +188,7 @@
                 Setting
               </button>
               <button (click)="myMember()" class="rounded-none ">
-                <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-1k8v1e7" stroke-width="2px"
+                <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4" fill="none" stroke-width="2px"
                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                   <circle cx="9" cy="7" r="4"></circle>
@@ -196,7 +198,7 @@
                 Members
               </button>
               <button (click)="myBilling()" class="rounded-none ">
-                <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-1k8v1e7" stroke-width="2px"
+                <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4" fill="none" stroke-width="2px"
                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
                   <line x1="1" y1="10" x2="23" y2="10"></line>
@@ -211,7 +213,7 @@
                   <img src="https://avatars.githubusercontent.com/u/4618863?v=4?">
                   <div class="file-upload">
                     <input type="file" />
-                    <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-1k8v1e7" stroke-width="2px"
+                    <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4" fill="none" stroke-width="2px"
                       stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                       <polyline points="16 16 12 12 8 16"></polyline>
                       <line x1="12" y1="12" x2="12" y2="21"></line>
@@ -299,37 +301,37 @@
               </h6>
               <ul class="">
                 <li class="flex mb-1 align-middle justify-left text-medium">
-                  <svg viewBox="0 0 24 24" focusable="false" class="mt-1 mr-2" stroke-width="2px" stroke-linecap="round"
+                  <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4 mt-1 mr-2" fill="none" stroke-width="2px" stroke-linecap="round"
                     stroke-linejoin="round" role="presentation">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>Branding removed
                 </li>
                 <li class="flex mb-1 align-middle justify-left text-medium">
-                  <svg viewBox="0 0 24 24" focusable="false" class="mt-1 mr-2" stroke-width="2px" stroke-linecap="round"
+                  <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4 mt-1 mr-2" fill="none" stroke-width="2px" stroke-linecap="round"
                     stroke-linejoin="round" role="presentation">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>View incomplete submissions
                 </li>
                 <li class="flex mb-1 align-middle justify-left text-medium">
-                  <svg viewBox="0 0 24 24" focusable="false" class="mt-1 mr-2" stroke-width="2px" stroke-linecap="round"
+                  <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4 mt-1 mr-2" fill="none" stroke-width="2px" stroke-linecap="round"
                     stroke-linejoin="round" role="presentation">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>In-depth drop off analytics
                 </li>
                 <li class="flex mb-1 align-middle justify-left text-medium">
-                  <svg viewBox="0 0 24 24" focusable="false" class="mt-1 mr-2" stroke-width="2px" stroke-linecap="round"
+                  <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4 mt-1 mr-2" fill="none" stroke-width="2px" stroke-linecap="round"
                     stroke-linejoin="round" role="presentation">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>Unlimited custom domains
                 </li>
                 <li class="flex mb-1 align-middle justify-left text-medium">
-                  <svg viewBox="0 0 24 24" focusable="false" class="mt-1 mr-2" stroke-width="2px" stroke-linecap="round"
+                  <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4 mt-1 mr-2" fill="none" stroke-width="2px" stroke-linecap="round"
                     stroke-linejoin="round" role="presentation">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>Organize typebots in folders
                 </li>
                 <li class="flex mb-1 align-middle justify-left text-medium">
-                  <svg viewBox="0 0 24 24" focusable="false" class="mt-1 mr-2" stroke-width="2px" stroke-linecap="round"
+                  <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4 mt-1 mr-2" fill="none" stroke-width="2px" stroke-linecap="round"
                     stroke-linejoin="round" role="presentation">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>Unlimited uploads
