@@ -154,11 +154,11 @@
           <div class="flex w-full bg-white rounded-lg">
             <div class="w-1/4 text-left border-r min-h-[585px] py-6">
               <p class="px-4 text-lg text-gray-500">example@email.com</p>
-              <button (click)="myAccount()" class="flex items-center w-full gap-2 px-4 py-2 mt-4 mb-2 text-sm font-medium text-gray-700 rounded-md active hover:bg-gray-100">
+              <button type="button" (click)="myAccount($event)" class="inline-flex items-center w-full gap-2 px-4 py-2 mt-4 mb-2 text-sm font-medium text-gray-700 rounded-md active hover:bg-gray-100">
                 <img class="w-5 h-5 rounded-full" src="https://avatars.githubusercontent.com/u/4618863?v=4?">
-                <p>My Account</p>
+                My Account
               </button>
-              <button (click)="myPreference()" class="flex items-center w-full gap-2 px-4 py-2 text-sm font-medium text-gray-700 rounded-md hover:bg-gray-100">
+              <button type="button" (click)="myPreference($event)" class="inline-flex items-center w-full gap-2 px-4 py-2 text-sm font-medium text-gray-700 rounded-md hover:bg-gray-100">
                 <svg viewBox="0 0 24 24" focusable="false" class="w-5 h-5" fill="none" stroke-width="2px"
                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <circle cx="12" cy="12" r="3"></circle>
@@ -166,10 +166,10 @@
                     d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
                   </path>
                 </svg>
-                <p>Preferences</p>
+                Preferences
               </button>
               <h3 class="px-4 mt-8 mb-4 text-lg text-gray-500">Workspace</h3>
-              <button (click)="mySetting()" class="flex items-center w-full gap-2 px-4 py-2 mb-2 text-sm font-medium text-gray-700 rounded-md hover:bg-gray-100">
+              <button type="button" (click)="mySetting($event)" class="flex items-center w-full gap-2 px-4 py-2 mb-2 text-sm font-medium text-gray-700 rounded-md hover:bg-gray-100">
                 <svg viewBox="0 0 24 24" focusable="false" class="w-5 h-5" fill="none" stroke-width="2px"
                   stroke-linecap="round" stroke-linejoin="round">
                   <line x1="22" y1="12" x2="2" y2="12"></line>
@@ -181,7 +181,7 @@
                 </svg>
                 Setting
               </button>
-              <button (click)="myMember()" class="flex items-center w-full gap-2 px-4 py-2 mb-2 text-sm font-medium text-gray-700 rounded-md hover:bg-gray-100">
+              <button type="button" (click)="myMember($event)" class="flex items-center w-full gap-2 px-4 py-2 mb-2 text-sm font-medium text-gray-700 rounded-md hover:bg-gray-100">
                 <svg viewBox="0 0 24 24" focusable="false" class="w-5 h-5" fill="none" stroke-width="2px"
                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -191,7 +191,7 @@
                 </svg>
                 Members
               </button>
-              <button (click)="myBilling()" class="flex items-center w-full gap-2 px-4 py-2 mb-2 text-sm font-medium text-gray-700 rounded-md hover:bg-gray-100">
+              <button type="button" (click)="myBilling($event)" class="flex items-center w-full gap-2 px-4 py-2 mb-2 text-sm font-medium text-gray-700 rounded-md hover:bg-gray-100">
                 <svg viewBox="0 0 24 24" focusable="false" class="w-5 h-5" fill="none" stroke-width="2px"
                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
@@ -200,7 +200,7 @@
                 Billing
               </button>
             </div>
-            <div class="w-3/4 px-10 py-6">
+            <div class="w-3/4 px-10 py-6 text-left">
               <div *ngIf="account">
                 <div class="profile">
                   <img src="https://avatars.githubusercontent.com/u/4618863?v=4?">
@@ -220,16 +220,17 @@
                 <form class="font-medium text-left text-gray-700 account-form">
                   <div class="field-box">
                     <label class="block mb-3">Name</label>
-                    <input type="text" class="block w-full px-3 py-2 bg-white border rounded-md focus:outline-none focus:border-blue-700 focus:ring-blue-700 sm:text-sm focus:ring-1" placeholder="nomikhokher" value="nomikhokher">
+                    <input (input)="nameValidation($event)" type="text" class="block w-full px-3 py-2 bg-white border rounded-md focus:outline-none focus:border-blue-700 focus:ring-blue-700 sm:text-sm focus:ring-1" placeholder="nomikhokher" value="nomikhokher">
                   </div>
-                  <div class="field-box">
+                  <div class="field-box tooltip">
                     <label class="block mb-3">Email address</label>
                     <input type="text" class="block w-full px-3 py-2 bg-white border rounded-md" disabled id="email" placeholder="Email@gmail.com">
+                    <span class="tooltip-text">Updating email is not available</span>
                   </div>
-                  <div class="save-btn">
+                  <div *ngIf="accountSaveBtn" class="save-btn">
                     <button
                     type="button"
-                    class="block px-4 py-2 ml-auto text-sm font-medium text-white bg-blue-600 rounded-md shadow-sm rounded-tl-md rounded-bl-md whitespace-nowrap hover:bg-blue-700">
+                    class="block px-4 py-2 ml-auto text-sm font-medium text-white bg-blue-700 rounded-md shadow-sm rounded-tl-md rounded-bl-md whitespace-nowrap hover:bg-blue-800">
                     save
                     </button>
                   </div>
@@ -361,7 +362,7 @@
                   class="px-4 py-2 mr-3 font-bold text-black bg-gray-200 rounded hover:bg-gray-300">
                   Cancel
                 </button>
-                <button class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 ">
+                <button class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-800 ">
                   Upgrade
                 </button>
               </div>
@@ -385,8 +386,8 @@
             </svg>
           </div>
           <p class="my-4 font-normal">Enter a unique name for your token to differentiate it from other tokens.</p>
-          <input type="text" class="block w-full px-3 py-2 my-4 bg-white border rounded-md focus:outline-none focus:border-blue-700 focus:ring-blue-700 sm:text-sm focus:ring-1" placeholder="..........-1d84-......-b054-..........">
-          <button disabled class="block px-4 py-2 ml-auto text-sm font-medium text-white bg-blue-600 bg-opacity-50 rounded-md shadow-sm rounded-tl-md rounded-bl-md whitespace-nowrap ">Create token</button>
+          <input (input)="enableTokenBtn($event)" type="text" class="block w-full px-3 py-2 my-4 bg-white border rounded-md focus:outline-none focus:border-blue-700 focus:ring-blue-700 sm:text-sm focus:ring-1" placeholder="I.e. Zapier, Github, Make.com">
+          <button disabled class="block px-4 py-2 ml-auto text-sm font-medium text-white bg-blue-700 bg-opacity-50 rounded-md shadow-sm rounded-tl-md rounded-bl-md whitespace-nowrap ">Create token</button>
         </div>
       </div>
     </div>

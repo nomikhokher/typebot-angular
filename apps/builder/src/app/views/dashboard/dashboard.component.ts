@@ -20,6 +20,8 @@ export class Dashboard implements OnInit {
   member: boolean = false;
   popup1: boolean = false;
   apiTokenModal:boolean = false;
+  accountSaveBtn:boolean = false;
+
   ngOnInit(): void {
     this.popup = false;
     this.popup1 = false;
@@ -45,40 +47,77 @@ export class Dashboard implements OnInit {
       console.log('OuteSide Click');
     }
   }
-  myAccount() {
+  myAccount(ev:any) {
     this.account = true;
     this.pref = false;
     this.setting = false;
     this.member = false;
     this.bill = false;
+
+    document.querySelectorAll('.active').forEach((element) => {
+      if(element.classList.contains('active')){
+        element.classList.remove('active')
+      }
+    });
+    ev.target.classList.add('active');
   }
-  myPreference() {
+
+  myPreference(ev:any) {
     this.pref = true;
     this.account = false;
     this.setting = false;
     this.member = false;
     this.bill = false;
+
+    document.querySelectorAll('.active').forEach((element) => {
+      if(element.classList.contains('active')){
+        element.classList.remove('active')
+      }
+    });
+
+    ev.target.classList.add('active');
   }
-  mySetting() {
+  mySetting(ev:any) {
     this.setting = true;
     this.account = false;
     this.pref = false;
     this.member = false;
     this.bill = false;
+
+    document.querySelectorAll('.active').forEach((element) => {
+      if(element.classList.contains('active')){
+        element.classList.remove('active')
+      }
+    });
+    ev.target.classList.add('active');
   }
-  myMember() {
+  myMember(ev:any) {
     this.member = true;
     this.setting = false;
     this.account = false;
     this.pref = false;
     this.bill = false;
+
+    document.querySelectorAll('.active').forEach((element) => {
+      if(element.classList.contains('active')){
+        element.classList.remove('active')
+      }
+    });
+    ev.target.classList.add('active');
   }
-  myBilling() {
+  myBilling(ev:any) {
     this.bill = true;
     this.member = false;
     this.setting = false;
     this.account = false;
     this.pref = false;
+
+    document.querySelectorAll('.active').forEach((element) => {
+      if(element.classList.contains('active')){
+        element.classList.remove('active')
+      }
+    });
+    ev.target.classList.add('active');
   }
   menuOffOn() {
     console.log('menu click');
@@ -101,5 +140,28 @@ export class Dashboard implements OnInit {
   saveTypeBot(){
     this.saveTypebotArray.push(this.typeBotCounter += 1);
     console.log(this.saveTypebotArray)
+  }
+
+  enableTokenBtn(event:any){
+    if(event.target.value != ''){
+      event.target.nextElementSibling.removeAttribute('disabled');
+      event.target.nextElementSibling.classList.remove('bg-opacity-50');
+      event.target.nextElementSibling.classList.add('hover:bg-blue-800');
+    }else{
+      event.target.nextElementSibling.setAttribute('disabled','disabled');
+      event.target.nextElementSibling.classList.add('bg-opacity-50');
+      event.target.nextElementSibling.classList.remove('hover:bg-blue-800');
+    }
+  }
+
+  nameValidation(ev:any){
+    if(ev.target.value == ''){
+      this.accountSaveBtn = false;
+    }else if(ev.target.value == ev.target.placeholder){
+      this.accountSaveBtn = false;
+    }
+    else{
+      this.accountSaveBtn = true;
+    }
   }
 }

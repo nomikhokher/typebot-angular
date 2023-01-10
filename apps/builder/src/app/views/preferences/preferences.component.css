@@ -1,14 +1,4 @@
-svg {
-    width: 1em;
-    height: 1em;
-    line-height: 1em;
-    -webkit-flex-shrink: 0;
-    -ms-flex-negative: 0;
-    flex-shrink: 0;
-    color: currentColor;
-    fill: transparent !important;
-    vertical-align: middle; 
-  }
+
 .wrapper{width: 890px;
     margin-top: 40px;
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -2px rgb(0 0 0 / 5%);
@@ -16,11 +6,11 @@ svg {
     margin-bottom: 3.75rem;
     border-radius: 6px;
     border: 1px solid #e5e7eb !important;
-  
-} 
+
+}
     .sidebar {
         border-right: 1px solid #e5e7eb;
-        padding: 30px 0 30px 0; 
+        padding: 30px 0 30px 0;
         min-height: 650px;
     }
 .sidebar a {display: block;font-size: 17px;font-weight: 400;color: #6b7280;    margin-bottom: 15px; margin-left: 15px;}
@@ -34,8 +24,8 @@ svg {
     display: block;
     margin-bottom: 0;
     margin-bottom: 9px;
-    width: 100%; 
-    
+    width: 100%;
+
 }
 .sidebar button:hover{background-color: #f3f4f6; border-radius: 5px;}
 .sidebar button.active{ background-color: #f3f4f6; border-radius: 5px;}
@@ -47,12 +37,12 @@ svg {
     stroke: #111;
     margin-right: 3px;}
     .sidebar h3 {color: #6b7280;font-weight: 400;font-size: 16px;margin: 34px 0 15px 16px; }
-    
+
 	.aside {
         padding: 40px;
     }
     .profile {width: 207px;   margin-bottom: 29px;  }
-    .profile p {text-align: right; text-align: right; 
+    .profile p {text-align: right; text-align: right;
         margin-top: -21px;
         font-size: 14px;}
     .profile img {
@@ -63,22 +53,22 @@ svg {
         display: inline-block;
     }
     .file-upload{
-      
+
         top: -7px;
 
         position:relative;
-        
+
         display: inline-block;
-    } 
+    }
         .file-upload  input[type='file']{
-    
-         
+
+
           position:absolute;
           top:0;
           left:0;
           opacity:0;
           cursor:pointer;
-    
+
         }
         .file-upload svg {display: inline-block;stroke: #000;margin-right: 4px;margin-top: -2px;}
 
@@ -134,7 +124,7 @@ margin: 0 auto 19px;
     .wrapper{width:100%;}
 
 }
-  
+
   @media only screen and (max-width: 800px) {
   .sidebar {
   border-right: 1px solid #e5e7eb;
@@ -148,4 +138,11 @@ margin: 0 auto 19px;
 .wrapper .flex {
   display: block;
 }
+}
+
+[type=radio]{
+  border-radius: 100px;
+}
+[type=radio]:checked {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='3'/%3E%3C/svg%3E");
 }

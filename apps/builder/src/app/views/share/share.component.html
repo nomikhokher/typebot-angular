@@ -6,7 +6,7 @@
             <div class="setting-btn">
                 <a href="" #userinput>https://typebot.io/</a>
                 <input #userinput (click)="changeColor()" (focusout)="changeColor1()"
-                    [ngClass]="{'bg-blue-600 font-black' : toggle==false, 'bg-white font-black': toggle==true}" class="rounded-sm text-sm"
+                    [ngClass]="{'bg-blue-700 font-black' : toggle==false, 'bg-white font-black': toggle==true}" class="rounded-sm text-sm"
                     id="username" type="my-typebot" value="my-typebot-b9n96pd">
                 <button (click)="changeColor()" *ngIf="toggle==false" class="rounded-none">
                     <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-1k8v1e7" stroke-width="2px"
@@ -555,7 +555,7 @@
                 css-1bv7he3" aria-label="Show My typebot menu" data-testid="more-button" id="menu-button-:rd:"
                     aria-expanded="false" aria-haspopup="menu" aria-controls="menu-list-:rd:">
                 </button>
-            </div> 
+            </div>
         </div>
         <div *ngIf="popup">
             <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
@@ -564,7 +564,7 @@
                     <div class="flex items-end sm:items-center justify-center mt-14  p-4 text-center sm:p-0">
                         <div (click)="ClickedOut($event)" class="flex bg-white modal-box ">
                             <div class="modal-popup px-5 py-3  ">
-                                <h4 
+                                <h4
                                     class="flex justify-left font-normal align-middle px-3 py-3 mb-3 wp-title rounded-md">
                                     <svg viewBox="0 0 24 24" focusable="false" class="mr-2 mt-1 text-white">
                                         <path fill="currentColor"
@@ -641,7 +641,7 @@
                                         Cancel
                                     </button>
                                     <button
-                                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ">
+                                        class="bg-blue-500 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded ">
                                         Upgrade
                                     </button>
                                 </div>

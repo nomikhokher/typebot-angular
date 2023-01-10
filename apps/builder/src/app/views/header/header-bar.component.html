@@ -138,7 +138,7 @@
                   <option value="can-edit" class="bg-white access-popup">Can edit</option>
                 </select>
                 <button
-                  class="inline-flex items-center justify-center px-4 py-1.5 text-sm font-medium text-white bg-blue-600 rounded-md shadow-sm whitespace-nowrap hover:bg-blue-700 access-popup">invite</button>
+                  class="inline-flex items-center justify-center px-4 py-1.5 text-sm font-medium text-white bg-blue-700 rounded-md shadow-sm whitespace-nowrap hover:bg-blue-800 access-popup">invite</button>
               </div>
               <div class="flex items-center gap-2 text-black mt-6 access-popup">
                 <img id="emoji-default" src="assets/svgs/setting.svg" class="w-6 h-6 access-popup">
@@ -160,7 +160,7 @@
           </div>
 
           <button (click)="savingTypeBot($event)"
-            class="{{publishArrowDown?' rounded-tl-md rounded-bl-md ':' rounded-md '}}inline-flex items-center justify-center px-4 py-2 ml-3 text-sm font-medium text-white bg-blue-600  shadow-sm whitespace-nowrap hover:bg-blue-700 publish-btn-main">
+            class="{{publishArrowDown?' rounded-tl-md rounded-bl-md ':' rounded-md '}}inline-flex items-center justify-center px-4 py-2 ml-3 text-sm font-medium text-white bg-blue-700  shadow-sm whitespace-nowrap hover:bg-blue-800 publish-btn-main">
             <span *ngIf="!saveTypeBot; else publishLoader">{{publishText}}</span>
             <ng-template #publishLoader>
               <div class="h-4 flex w-12 items-center publish-btn-loader">
@@ -174,7 +174,7 @@
             </ng-template>
           </button>
           <div class="access-popup" *ngIf="publishArrowDown" (click)="toggleUnpublish()"
-            class="{{unPublishPopup?' bg-blue-700 ':' bg-blue-600 '}}flex items-center justify-center text-sm font-medium text-white bg-blue-600  rounded-tr-md rounded-br-md shadow-sm whitespace-nowrap hover:bg-blue-700 h-9 w-8 border-l cursor-pointer access-popup">
+            class="{{unPublishPopup?' bg-blue-700 ':' bg-blue-700 '}}flex items-center justify-center text-sm font-medium text-white bg-blue-700  rounded-tr-md rounded-br-md shadow-sm whitespace-nowrap hover:bg-blue-800 h-9 w-8 border-l cursor-pointer access-popup">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
               stroke="currentColor" class="w-5 h-5 access-popup">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
