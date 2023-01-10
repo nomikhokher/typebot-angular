@@ -19,6 +19,7 @@ export class Dashboard implements OnInit {
   setting: boolean = false;
   member: boolean = false;
   popup1: boolean = false;
+  apiTokenModal:boolean = false;
   ngOnInit(): void {
     this.popup = false;
     this.popup1 = false;

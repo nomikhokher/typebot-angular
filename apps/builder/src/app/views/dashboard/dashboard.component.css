@@ -333,7 +333,7 @@ button.c-n:hover {
   margin-left: 15px;
 }
 
-.sidebar button {
+/* .sidebar button {
   line-height: 1.2;
   text-align: left;
   padding: 6px 14px;
@@ -345,37 +345,36 @@ button.c-n:hover {
   margin-bottom: 9px;
   width: 100%;
 
-}
+} */
 
-.sidebar button:hover {
+/* .sidebar button:hover {
   background-color: #f3f4f6;
   border-radius: 5px;
-}
+} */
 
-.sidebar button.active {
+button.active {
   background-color: #f3f4f6;
-  border-radius: 5px;
 }
 
-.sidebar button svg {
+/* .sidebar button svg {
   display: inline-block;
   width: 15px;
   height: 15px;
   margin-top: -3px;
   stroke: #111;
   margin-right: 3px;
-}
+} */
 
-.sidebar h3 {
+/* .sidebar h3 {
   color: #6b7280;
   font-weight: 400;
   font-size: 16px;
   margin: 34px 0 15px 16px;
-}
+} */
 
-.aside {
+/* .aside {
   padding: 40px;
-}
+} */
 
 .profile {
   width: 207px;
@@ -436,15 +435,15 @@ button.c-n:hover {
   margin-bottom: 23px;
 }
 
-.field-box label {
+/* .field-box label {
   display: block;
   font-weight: 500;
   margin-bottom: 7px;
   color: #111;
   font-size: 15px;
-}
+} */
 
-.field-box input {
+/* .field-box input {
   width: 100%;
   height: 40px;
   border: 1px solid #e5e7eb;
@@ -452,7 +451,7 @@ button.c-n:hover {
   padding: 0 8px;
   line-height: 18px;
   font-size: 15px;
-}
+} */
 
 .tokken input {
   width: 90% !important;

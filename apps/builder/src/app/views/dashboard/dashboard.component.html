@@ -148,35 +148,29 @@
 
   <div *ngIf="popup" class="">
     <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-      <div (click)="popup = false" class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75"></div>
-      <div (click)="ClickedOut($event)" class="fixed inset-0 z-10 overflow-y-auto">
-        <div class="flex items-end justify-center min-h-full p-4 text-center sm:items-center sm:p-0">
-          <div (click)="ClickedOut($event)" class="flex bg-white modal-box">
-            <div class="w-1/4 sidebar ">
-              <a>example@email.com</a>
-              <button (click)="myAccount()" class="rounded-none active">
-                <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4" fill="none" stroke-width="2px"
+      <div (click)="popup = false" class="fixed inset-0 transition-opacity bg-black bg-opacity-50"></div>
+      <div class="fixed inset-0 z-10 w-full max-w-4xl mx-auto overflow-y-auto">
+        <div class="flex items-end justify-center w-full min-h-full p-4 text-center sm:items-center sm:p-0">
+          <div class="flex w-full bg-white rounded-lg">
+            <div class="w-1/4 text-left border-r min-h-[585px] py-6">
+              <p class="px-4 text-lg text-gray-500">example@email.com</p>
+              <button (click)="myAccount()" class="flex items-center w-full gap-2 px-4 py-2 mt-4 mb-2 text-sm font-medium text-gray-700 rounded-md active hover:bg-gray-100">
+                <img class="w-5 h-5 rounded-full" src="https://avatars.githubusercontent.com/u/4618863?v=4?">
+                <p>My Account</p>
+              </button>
+              <button (click)="myPreference()" class="flex items-center w-full gap-2 px-4 py-2 text-sm font-medium text-gray-700 rounded-md hover:bg-gray-100">
+                <svg viewBox="0 0 24 24" focusable="false" class="w-5 h-5" fill="none" stroke-width="2px"
                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <circle cx="12" cy="12" r="3"></circle>
                   <path
                     d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
                   </path>
                 </svg>
-                My Account
+                <p>Preferences</p>
               </button>
-              <button (click)="myPreference()" class="rounded-none ">
-                <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4" fill="none" stroke-width="2px"
-                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <circle cx="12" cy="12" r="3"></circle>
-                  <path
-                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
-                  </path>
-                </svg>
-                Preferences
-              </button>
-              <h3>Workspace</h3>
-              <button (click)="mySetting()" class="rounded-none ">
-                <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4" fill="none" stroke-width="2px"
+              <h3 class="px-4 mt-8 mb-4 text-lg text-gray-500">Workspace</h3>
+              <button (click)="mySetting()" class="flex items-center w-full gap-2 px-4 py-2 mb-2 text-sm font-medium text-gray-700 rounded-md hover:bg-gray-100">
+                <svg viewBox="0 0 24 24" focusable="false" class="w-5 h-5" fill="none" stroke-width="2px"
                   stroke-linecap="round" stroke-linejoin="round">
                   <line x1="22" y1="12" x2="2" y2="12"></line>
                   <path
@@ -187,8 +181,8 @@
                 </svg>
                 Setting
               </button>
-              <button (click)="myMember()" class="rounded-none ">
-                <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4" fill="none" stroke-width="2px"
+              <button (click)="myMember()" class="flex items-center w-full gap-2 px-4 py-2 mb-2 text-sm font-medium text-gray-700 rounded-md hover:bg-gray-100">
+                <svg viewBox="0 0 24 24" focusable="false" class="w-5 h-5" fill="none" stroke-width="2px"
                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                   <circle cx="9" cy="7" r="4"></circle>
@@ -197,8 +191,8 @@
                 </svg>
                 Members
               </button>
-              <button (click)="myBilling()" class="rounded-none ">
-                <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4" fill="none" stroke-width="2px"
+              <button (click)="myBilling()" class="flex items-center w-full gap-2 px-4 py-2 mb-2 text-sm font-medium text-gray-700 rounded-md hover:bg-gray-100">
+                <svg viewBox="0 0 24 24" focusable="false" class="w-5 h-5" fill="none" stroke-width="2px"
                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
                   <line x1="1" y1="10" x2="23" y2="10"></line>
@@ -206,14 +200,13 @@
                 Billing
               </button>
             </div>
-            <div class="w-3/4 aside">
-
+            <div class="w-3/4 px-10 py-6">
               <div *ngIf="account">
                 <div class="profile">
                   <img src="https://avatars.githubusercontent.com/u/4618863?v=4?">
                   <div class="file-upload">
                     <input type="file" />
-                    <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4" fill="none" stroke-width="2px"
+                    <svg viewBox="0 0 24 24" focusable="false" class="w-5 h-5" fill="none" stroke-width="2px"
                       stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                       <polyline points="16 16 12 12 8 16"></polyline>
                       <line x1="12" y1="12" x2="12" y2="21"></line>
@@ -224,20 +217,46 @@
                   </div>
                   <p>.jpg or.png, max 1MB</p>
                 </div>
-                <form class="account-form">
+                <form class="font-medium text-left text-gray-700 account-form">
                   <div class="field-box">
-                    <label>Name</label>
-                    <input type="text" class="" placeholder="nomikhokher">
+                    <label class="block mb-3">Name</label>
+                    <input type="text" class="block w-full px-3 py-2 bg-white border rounded-md focus:outline-none focus:border-blue-700 focus:ring-blue-700 sm:text-sm focus:ring-1" placeholder="nomikhokher" value="nomikhokher">
                   </div>
                   <div class="field-box">
-                    <label>Email address</label>
-                    <input type="text" disabled id="email" placeholder="Email@gmail.com">
+                    <label class="block mb-3">Email address</label>
+                    <input type="text" class="block w-full px-3 py-2 bg-white border rounded-md" disabled id="email" placeholder="Email@gmail.com">
+                  </div>
+                  <div class="save-btn">
+                    <button
+                    type="button"
+                    class="block px-4 py-2 ml-auto text-sm font-medium text-white bg-blue-600 rounded-md shadow-sm rounded-tl-md rounded-bl-md whitespace-nowrap hover:bg-blue-700">
+                    save
+                    </button>
                   </div>
                   <div class="field-box">
-                    <label>API token</label>
-                    <div class="tokken">
-                      <input type="text" class="" placeholder="..........-1d84-......-b054-..........">
-                      <button>show</button>
+                    <label class="block my-4 text-2xl">API token</label>
+                    <p class="font-normal">These tokens allow other apps to control your whole account and typebots. Be careful!</p>
+                    <button
+                    type="button"
+                    (click)="apiTokenModal = true"
+                    class="block px-4 py-2 my-4 ml-auto text-sm font-medium text-gray-700 bg-gray-100 rounded-md shadow-sm rounded-tl-md rounded-bl-md whitespace-nowrap hover:bg-gray-200">
+                    Create
+                    </button>
+                    <div class="w-full account-table">
+                      <table class="w-full text-center">
+                        <thead class="border-b">
+                          <tr>
+                            <th class="py-2 text-base font-medium">
+                              Name
+                            </th>
+                            <th class="py-2 text-base font-medium">
+                              Created
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
                 </form>
@@ -352,6 +371,28 @@
       </div>
     </div>
   </div>
+
+  <!--Create Token Modal-->
+  <div *ngIf="apiTokenModal" class="relative z-10">
+    <div (click)="apiTokenModal = false" class="fixed inset-0 transition-opacity bg-black bg-opacity-50"></div>
+    <div class="fixed inset-0 z-10 w-full max-w-lg mx-auto">
+      <div class="flex items-end justify-center w-full min-h-full p-4 text-center sm:items-center sm:p-0">
+        <div class="w-full p-6 text-left bg-white rounded-lg">
+          <div class="flex items-center justify-between">
+            <h2 class="block text-2xl font-medium">Create Token</h2>
+            <svg (click)="apiTokenModal = false" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="p-1 rounded-md w-7 h-7 hover:bg-gray-100">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </div>
+          <p class="my-4 font-normal">Enter a unique name for your token to differentiate it from other tokens.</p>
+          <input type="text" class="block w-full px-3 py-2 my-4 bg-white border rounded-md focus:outline-none focus:border-blue-700 focus:ring-blue-700 sm:text-sm focus:ring-1" placeholder="..........-1d84-......-b054-..........">
+          <button disabled class="block px-4 py-2 ml-auto text-sm font-medium text-white bg-blue-600 bg-opacity-50 rounded-md shadow-sm rounded-tl-md rounded-bl-md whitespace-nowrap ">Create token</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Create Token Modal End-->
+
 
 
 </div>
