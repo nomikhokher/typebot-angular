@@ -9,6 +9,8 @@ import { CommonModule } from '@angular/common';
 })
 export class Dashboard implements OnInit {
   constructor(private router: Router) {}
+  saveTypebotArray:any = [1,2,3];
+  typeBotCounter:number = 3;
   menu: boolean = false;
   bill: boolean = false;
   popup: boolean = false;
@@ -93,5 +95,10 @@ export class Dashboard implements OnInit {
       this.popup = false;
       console.log('OuteSide Click');
     }
+  }
+
+  saveTypeBot(){
+    this.saveTypebotArray.push(this.typeBotCounter += 1);
+    console.log(this.saveTypebotArray)
   }
 }
