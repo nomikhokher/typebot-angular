@@ -21,6 +21,9 @@ export class Dashboard implements OnInit {
   popup1: boolean = false;
   apiTokenModal:boolean = false;
   accountSaveBtn:boolean = false;
+  workspace: any = [{
+    name:"nomikhokher's workspace",
+  }];
 
   ngOnInit(): void {
     this.popup = false;
@@ -163,5 +166,11 @@ export class Dashboard implements OnInit {
     else{
       this.accountSaveBtn = true;
     }
+  }
+
+  createWorkSpace(){
+    this.workspace.push({
+      name:'My Workspace'
+    })
   }
 }
