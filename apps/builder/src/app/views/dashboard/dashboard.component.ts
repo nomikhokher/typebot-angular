@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -27,7 +27,17 @@ export class Dashboard implements OnInit {
 
   constructor(private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // window.addEventListener('click',function(ev:Event){
+    //   document.querySelectorAll('.typebot-option').forEach((el:any)=>{
+    //     if(ev.target){
+    //       if(!el.classList.contains('hidden')){
+    //         el.classList.add('hidden');
+    //       }
+    //     }
+    //   })
+    // })
+  }
 
 
   navigate(links: any[]) {
@@ -156,7 +166,31 @@ export class Dashboard implements OnInit {
   }
 
   handleOption(ev:any,key:any){
-    console.log(ev,key)
+    document.querySelectorAll('.typebot-option').forEach((el:any)=>{
+      el.classList.add('hidden');
+    })
+    document.querySelectorAll('.option-btn').forEach((btn:any)=>{
+      btn.classList.remove('bg-gray-200');
+    })
+    document.querySelectorAll('.typebot-option').forEach((el:any)=>{
+      if(key == el.getAttribute('data-option')){
+        ev.target.classList.add('bg-gray-200');
+        el.classList.remove('hidden');
+      }
+    })
+  }
+
+  @HostListener("document:click", ['$event'])
+  clicked(event:any) {
+    console.log(event)
+    if(!event.target.classList.contains('dontHide')){
+      document.querySelectorAll('.option-btn').forEach((btn:any)=>{
+        btn.classList.remove('bg-gray-200');
+      })
+      document.querySelectorAll('.typebot-option').forEach((el:any)=>{
+        el.classList.add('hidden');
+      })
+    }
   }
 }
 

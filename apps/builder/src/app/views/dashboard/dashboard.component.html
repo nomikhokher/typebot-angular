@@ -1,7 +1,7 @@
 <div class="w-full py-5 mb-8 border-b">
   <header class="w-full mx-auto lg:max-w-5xl">
     <div class="flex items-center justify-between">
-      <a href="" class="w-10 h-10">
+      <a href="" class="w-8 h-8">
         <svg viewBox="0 0 500 500" focusable="false" class="w-full">
           <rect width="500" height="500" rx="75" fill="#0042DA"></rect>
           <rect x="438.709" y="170.968" width="64.5161" height="290.323" rx="32.2581"
@@ -50,7 +50,7 @@
           </svg>
         </button>
         <div *ngIf="settingMenu" (click)="settingMenu = false" class="fixed h-full top-0 left-0 w-full bg-transparent"></div>
-        <ul *ngIf="settingMenu" class=" absolute right-0 py-4 bg-white border rounded-lg shadow-lg top-12 w-full max-w-[320px]">
+        <ul *ngIf="settingMenu" class=" absolute right-0 py-4 bg-white border rounded-lg shadow-lg top-12 w-full max-w-[320px] z-10">
           <li *ngFor="let work of workspace" class="cursor-pointer flex items-center gap-2 px-4 py-1 hover:bg-gray-100">
             <span>
               <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4  " fill="none" stroke-width="2px"
@@ -108,7 +108,7 @@
     </button>
   </div>
 
-  <div class="flex flex-row gap-4 btn-h">
+  <div class="flex flex-row gap-4 btn-h ">
     <div class="basis-1/4 col">
       <button class="c-n" (click)="navigate(['/', 'create']);saveTypeBot()">
         <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon c-svg" stroke-width="2px" stroke-linecap="round"
@@ -119,9 +119,9 @@
         <h2 class="text-white" style="color:#fff;">Create a typebot</h2>
       </button>
     </div>
-    <div *ngFor="let typebot of saveTypebotArray | keyvalue" class="p-6 basis-1/4 border rounded-lg min-h-[250px] hover:bg-gray-100 cursor-pointer">
+    <div *ngFor="let typebot of saveTypebotArray | keyvalue" class="p-6 basis-1/4 border rounded-lg min-h-[250px] hover:bg-gray-100 cursor-pointer relative">
       <div class="flex items-center justify-between">
-        <button type="button" class="w-5 h-5 text-blue-700">
+        <button type="button" class="w-7 h-7 text-blue-700 hover:bg-blue-100 p-1 rounded-md cursor-grabbing">
           <svg viewBox="0 0 24 24" focusable="false" class="w-full" stroke-width="2px"
             stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" aria-hidden="true" fill="none" style="stroke:#0042da !important">
             <circle cx="12" cy="9" r="1"></circle>
@@ -133,50 +133,20 @@
           </svg>
         </button>
         <span *ngIf="false">Live</span>
-        <button (click)="handleOption($event,typebot.key)" [attr.data-btn]="typebot.key" type="button" class="p-1 border rounded-md w-7 h-7">
-          <svg viewBox="0 0 24 24" focusable="false" class="w-full" stroke-width="2px"
+        <button (click)="handleOption($event,typebot.key)" [attr.data-btn]="typebot.key" type="button" class="border rounded-md w-7 h-7 dontHide">
+          <svg viewBox="0 0 24 24" focusable="false" class="w-full p-1 dontHide option-btn" stroke-width="2px"
             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" fill="none">
             <circle cx="12" cy="12" r="1"></circle>
             <circle cx="12" cy="5" r="1"></circle>
             <circle cx="12" cy="19" r="1"></circle>
           </svg>
         </button>
-        <ul [attr.data-option]="typebot.key" class="absolute right-0 py-4 bg-white border rounded-lg shadow-lg top-12 w-full max-w-[320px] typebot-option hidden">
-          <li *ngFor="let work of workspace" class="cursor-pointer flex items-center gap-2 px-4 py-1 hover:bg-gray-100">
-            <span>
-              <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4  " fill="none" stroke-width="2px"
-                stroke-linecap="round" stroke-linejoin="round">
-                <line x1="22" y1="12" x2="2" y2="12"></line>
-                <path
-                  d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z">
-                </path>
-                <line x1="6" y1="16" x2="6.01" y2="16"></line>
-                <line x1="10" y1="16" x2="10.01" y2="16"></line>
-              </svg>
-            </span>
-            <p (click)="replaceValue($event)" class=" ">{{work.name}}</p>
-            <span class="bg-gray-100 px-2 py-1 text-sm  rounded-md">Free</span>
+        <ul [attr.data-option]="typebot.key" class="absolute -right-36 py-2 bg-white border rounded-lg shadow-lg top-16 w-full max-w-[200px] typebot-option hidden dontHide z-10">
+          <li class="cursor-pointer flex items-center gap-2 px-4 py-1 hover:bg-gray-100 dontHide">
+            Duplicate
           </li>
-          <li (click)="createWorkSpace()" class="flex items-center gap-2 px-4 py-1 hover:bg-gray-100 cursor-pointer">
-            <span>
-              <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4" fill="none"
-                stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
-            </span>
-            New workspace
-          </li>
-          <li class="flex items-center gap-2 px-4 py-1 logout hover:bg-gray-100 cursor-pointer">
-            <span>
-              <svg viewBox="0 0 24 24" focusable="false" class=" w-4 h-4" fill="none"
-                stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                <polyline points="16 17 21 12 16 7"></polyline>
-                <line x1="21" y1="12" x2="9" y2="12"></line>
-              </svg>
-            </span>
-            Log out
+          <li class="text-red-500 flex items-center gap-2 px-4 py-1 hover:bg-gray-100 cursor-pointer dontHide">
+            Delete
           </li>
         </ul>
       </div>
