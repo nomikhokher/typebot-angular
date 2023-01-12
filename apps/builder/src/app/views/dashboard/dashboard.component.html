@@ -17,7 +17,7 @@
         </svg>
       </a>
       <div class="relative flex items-center justify-end w-full gap-4 header-btn">
-        <button (click)="popUpSet()" class="flex items-center gap-2 px-4 py-2 font-medium bg-gray-100 rounded-lg sign-up-btn hover:bg-gray-200">
+        <button (click)="settingPopup = true" class="flex items-center gap-2 px-4 py-2 font-medium bg-gray-100 rounded-lg sign-up-btn hover:bg-gray-200">
           <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4" stroke-width="2px"
             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" fill="none">
             <circle cx="12" cy="12" r="3"></circle>
@@ -29,8 +29,8 @@
             Settings & Members
           </span>
         </button>
-        <button (click)="menuOffOn()" class="flex items-center justify-between px-4 py-2 font-medium border rounded-lg sign-up-btn hover:bg-gray-200 w-auto min-w-[320px]">
-          <div class="flex items-center gap-2">
+        <button (click)="settingMenuToggle()" class="flex items-center justify-between px-4 py-2 font-medium border rounded-lg sign-up-btn hover:bg-gray-200 w-auto">
+          <div class="flex items-center gap-2 cursor-pointer">
             <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4" fill="none" stroke-width="2px"
               stroke-linecap="round" stroke-linejoin="round">
               <line x1="22" y1="12" x2="2" y2="12"></line>
@@ -40,7 +40,7 @@
               <line x1="6" y1="16" x2="6.01" y2="16"></line>
               <line x1="10" y1="16" x2="10.01" y2="16"></line>
             </svg>
-            <span class="b-icon">
+            <span class="b-icon" id="update-workspace">
               nomikhokher's workspace
             </span>
             <span class="bg-gray-100 px-2 py-1 text-sm rounded-md">Free</span>
@@ -49,10 +49,11 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
           </svg>
         </button>
-        <ul *ngIf="menu" class="absolute right-0 py-4 bg-white border rounded-lg shadow-lg top-12 w-full max-w-[320px]">
-          <li *ngFor="let work of workspace" class="flex items-center gap-2 px-4 py-1 hover:bg-gray-100">
+        <div *ngIf="settingMenu" (click)="settingMenu = false" class="fixed h-full top-0 left-0 w-full bg-transparent"></div>
+        <ul *ngIf="settingMenu" class=" absolute right-0 py-4 bg-white border rounded-lg shadow-lg top-12 w-full max-w-[320px]">
+          <li *ngFor="let work of workspace" class="cursor-pointer flex items-center gap-2 px-4 py-1 hover:bg-gray-100">
             <span>
-              <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4" fill="none" stroke-width="2px"
+              <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4  " fill="none" stroke-width="2px"
                 stroke-linecap="round" stroke-linejoin="round">
                 <line x1="22" y1="12" x2="2" y2="12"></line>
                 <path
@@ -62,8 +63,8 @@
                 <line x1="10" y1="16" x2="10.01" y2="16"></line>
               </svg>
             </span>
-            <p>{{work.name}}</p>
-            <span class="bg-gray-100 px-2 py-1 text-sm rounded-md">Free</span>
+            <p (click)="replaceValue($event)" class=" ">{{work.name}}</p>
+            <span class="bg-gray-100 px-2 py-1 text-sm  rounded-md">Free</span>
           </li>
           <li (click)="createWorkSpace()" class="flex items-center gap-2 px-4 py-1 hover:bg-gray-100 cursor-pointer">
             <span>
@@ -75,9 +76,9 @@
             </span>
             New workspace
           </li>
-          <li class="flex items-center gap-2 px-4 py-1 logout hover:bg-gray-100">
+          <li class="flex items-center gap-2 px-4 py-1 logout hover:bg-gray-100 cursor-pointer">
             <span>
-              <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4" fill="none"
+              <svg viewBox="0 0 24 24" focusable="false" class=" w-4 h-4" fill="none"
                 stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
                 <polyline points="16 17 21 12 16 7"></polyline>
@@ -94,7 +95,7 @@
 
 <div class="w-full mx-auto lg:max-w-5xl">
   <div class="w-full">
-    <button (click)="popUpSet1()" class="flex items-center gap-2 px-6 py-1 font-medium bg-gray-100 rounded-lg sign-up-btn hover:bg-gray-200">
+    <button (click)="folderPopup = true"class="flex items-center gap-2 px-6 py-1 font-medium bg-gray-100 rounded-lg sign-up-btn hover:bg-gray-200">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
         <path stroke-linecap="round" stroke-linejoin="round" d="M12 10.5v6m3-3H9m4.06-7.19l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
       </svg>
@@ -118,7 +119,7 @@
         <h2 class="text-white" style="color:#fff;">Create a typebot</h2>
       </button>
     </div>
-    <div *ngFor="let typebot of saveTypebotArray" class="p-6 basis-1/4 border rounded-lg min-h-[250px] hover:bg-gray-100 cursor-pointer">
+    <div *ngFor="let typebot of saveTypebotArray | keyvalue" class="p-6 basis-1/4 border rounded-lg min-h-[250px] hover:bg-gray-100 cursor-pointer">
       <div class="flex items-center justify-between">
         <button type="button" class="w-5 h-5 text-blue-700">
           <svg viewBox="0 0 24 24" focusable="false" class="w-full" stroke-width="2px"
@@ -132,7 +133,7 @@
           </svg>
         </button>
         <span *ngIf="false">Live</span>
-        <button type="button" class="p-1 border rounded-md w-7 h-7">
+        <button (click)="handleOption($event,typebot.key)" [attr.data-btn]="typebot.key" type="button" class="p-1 border rounded-md w-7 h-7">
           <svg viewBox="0 0 24 24" focusable="false" class="w-full" stroke-width="2px"
             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" fill="none">
             <circle cx="12" cy="12" r="1"></circle>
@@ -140,6 +141,44 @@
             <circle cx="12" cy="19" r="1"></circle>
           </svg>
         </button>
+        <ul [attr.data-option]="typebot.key" class="absolute right-0 py-4 bg-white border rounded-lg shadow-lg top-12 w-full max-w-[320px] typebot-option hidden">
+          <li *ngFor="let work of workspace" class="cursor-pointer flex items-center gap-2 px-4 py-1 hover:bg-gray-100">
+            <span>
+              <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4  " fill="none" stroke-width="2px"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="12" x2="2" y2="12"></line>
+                <path
+                  d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z">
+                </path>
+                <line x1="6" y1="16" x2="6.01" y2="16"></line>
+                <line x1="10" y1="16" x2="10.01" y2="16"></line>
+              </svg>
+            </span>
+            <p (click)="replaceValue($event)" class=" ">{{work.name}}</p>
+            <span class="bg-gray-100 px-2 py-1 text-sm  rounded-md">Free</span>
+          </li>
+          <li (click)="createWorkSpace()" class="flex items-center gap-2 px-4 py-1 hover:bg-gray-100 cursor-pointer">
+            <span>
+              <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4" fill="none"
+                stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </span>
+            New workspace
+          </li>
+          <li class="flex items-center gap-2 px-4 py-1 logout hover:bg-gray-100 cursor-pointer">
+            <span>
+              <svg viewBox="0 0 24 24" focusable="false" class=" w-4 h-4" fill="none"
+                stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                <polyline points="16 17 21 12 16 7"></polyline>
+                <line x1="21" y1="12" x2="9" y2="12"></line>
+              </svg>
+            </span>
+            Log out
+          </li>
+        </ul>
       </div>
       <div class="flex flex-col items-center justify-center h-full pb-14 gap-y-4">
         <svg viewBox="0 0 24 24" focusable="false" class="w-8 h-8" stroke-width="2px" stroke-linecap="round"
@@ -153,9 +192,10 @@
     </div>
   </div>
 
-  <div *ngIf="popup" class="">
+  <!--Setting Modal-->
+  <div *ngIf="settingPopup" class="">
     <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-      <div (click)="popup = false" class="fixed inset-0 transition-opacity bg-black bg-opacity-50"></div>
+      <div (click)="settingPopup = false" class="fixed inset-0 transition-opacity bg-black bg-opacity-50"></div>
       <div class="fixed inset-0 z-10 w-full max-w-4xl mx-auto overflow-y-auto">
         <div class="flex items-end justify-center w-full min-h-full p-4 text-center sm:items-center sm:p-0">
           <div class="flex w-full bg-white rounded-lg">
@@ -288,97 +328,98 @@
       </div>
     </div>
   </div>
+  <!--Setting Modal-->
 
-  <div *ngIf="popup1">
+  <!--Folder Modal-->
+  <div *ngIf="folderPopup">
     <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-      <div class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75"></div>
-      <div (click)="ClickedOut1($event)" class="fixed inset-0 z-10 overflow-y-auto">
-        <div class="flex items-end justify-center p-4 text-center sec-popup sm:items-center mt-14 sm:p-0">
-          <div (click)="ClickedOut1($event)" class="flex bg-white modal-box ">
-            <div class="px-5 py-3 modal-popup ">
-              <h4 class="flex px-3 py-3 mb-3 font-normal align-middle rounded-md justify-left wp-title">
-                <svg viewBox="0 0 24 24" focusable="false" class="mt-1 mr-2 text-white">
-                  <path fill="currentColor"
-                    d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm.25,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,12.25,5ZM14.5,18.5h-4a1,1,0,0,1,0-2h.75a.25.25,0,0,0,.25-.25v-4.5a.25.25,0,0,0-.25-.25H10.5a1,1,0,0,1,0-2h1a2,2,0,0,1,2,2v4.75a.25.25,0,0,0,.25.25h.75a1,1,0,1,1,0,2Z">
-                  </path>
-                </svg>
-                You need to upgrade your plan in order to
-              </h4>
-              <svg viewBox="0 0 500 500" focusable="false" class="my-2" style="width:30px; height:30px;">
-                <rect width="500" height="500" rx="75" fill="#0042DA"></rect>
-                <rect x="438.709" y="170.968" width="64.5161" height="290.323" rx="32.2581"
-                  transform="rotate(90 438.709 170.968)" fill="#FF8E20"></rect>
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M93.5481 235.484C111.364 235.484 125.806 221.041 125.806 203.226C125.806 185.41 111.364 170.968 93.5481 170.968C75.7325 170.968 61.29 185.41 61.29 203.226C61.29 221.041 75.7325 235.484 93.5481 235.484Z"
-                  fill="#FF8E20"></path>
-                <rect x="61.29" y="332.259" width="64.5161" height="290.323" rx="32.2581"
-                  transform="rotate(-90 61.29 332.259)" fill="white"></rect>
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M406.451 267.742C388.635 267.742 374.193 282.184 374.193 300C374.193 317.815 388.635 332.258 406.451 332.258C424.267 332.258 438.709 317.815 438.709 300C438.709 282.184 424.267 267.742 406.451 267.742Z"
-                  fill="white"></path>
+      <div (click)="folderPopup = false" class="fixed inset-0 transition-opacity bg-black bg-opacity-50"></div>
+      <div class="fixed inset-0 z-10 overflow-y-auto flex items-center justify-center w-fit mx-auto">
+        <div class="flex bg-white w-full rounded-lg">
+          <div class="px-5 py-3 modal-popup ">
+            <h4 class="flex px-3 py-3 mb-3 font-normal align-middle rounded-md justify-left wp-title">
+              <svg viewBox="0 0 24 24" focusable="false" class="mt-1 mr-2 text-white">
+                <path fill="currentColor"
+                  d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm.25,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,12.25,5ZM14.5,18.5h-4a1,1,0,0,1,0-2h.75a.25.25,0,0,0,.25-.25v-4.5a.25.25,0,0,0-.25-.25H10.5a1,1,0,0,1,0-2h1a2,2,0,0,1,2,2v4.75a.25.25,0,0,0,.25.25h.75a1,1,0,1,1,0,2Z">
+                </path>
               </svg>
-              <h3 class="mt-3 text-2xl font-bold text-left">Upgrade to <span style="color:#ff8b1a;">Personal Pro</span>
-                plan</h3>
-              <p class="my-4 text-lg text-left ">For solo creators who want to do even more.</p>
-              <div class="flex my-3 align-bottom justify-left">
-                <h5 class="text-4xl font-bold">$39 </h5>
-                <span class="pt-3 text-base font-bold"> / month</span>
-              </div>
-              <h6 class="pt-1 mb-4 text-lg font-semibold text-left">Everything in Personal, plus:
-              </h6>
-              <ul class="">
-                <li class="flex mb-1 align-middle justify-left text-medium">
-                  <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4 mt-1 mr-2" fill="none" stroke-width="2px" stroke-linecap="round"
-                    stroke-linejoin="round" role="presentation">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>Branding removed
-                </li>
-                <li class="flex mb-1 align-middle justify-left text-medium">
-                  <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4 mt-1 mr-2" fill="none" stroke-width="2px" stroke-linecap="round"
-                    stroke-linejoin="round" role="presentation">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>View incomplete submissions
-                </li>
-                <li class="flex mb-1 align-middle justify-left text-medium">
-                  <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4 mt-1 mr-2" fill="none" stroke-width="2px" stroke-linecap="round"
-                    stroke-linejoin="round" role="presentation">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>In-depth drop off analytics
-                </li>
-                <li class="flex mb-1 align-middle justify-left text-medium">
-                  <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4 mt-1 mr-2" fill="none" stroke-width="2px" stroke-linecap="round"
-                    stroke-linejoin="round" role="presentation">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>Unlimited custom domains
-                </li>
-                <li class="flex mb-1 align-middle justify-left text-medium">
-                  <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4 mt-1 mr-2" fill="none" stroke-width="2px" stroke-linecap="round"
-                    stroke-linejoin="round" role="presentation">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>Organize typebots in folders
-                </li>
-                <li class="flex mb-1 align-middle justify-left text-medium">
-                  <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4 mt-1 mr-2" fill="none" stroke-width="2px" stroke-linecap="round"
-                    stroke-linejoin="round" role="presentation">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>Unlimited uploads
-                </li>
-              </ul>
-              <div class="inline-block float-right btn-group mt-7">
-                <button (click)="popUpSet1()"
-                  class="px-4 py-2 mr-3 font-bold text-black bg-gray-200 rounded hover:bg-gray-300">
-                  Cancel
-                </button>
-                <button class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-800 ">
-                  Upgrade
-                </button>
-              </div>
+              You need to upgrade your plan in order to
+            </h4>
+            <svg viewBox="0 0 500 500" focusable="false" class="my-2" style="width:30px; height:30px;">
+              <rect width="500" height="500" rx="75" fill="#0042DA"></rect>
+              <rect x="438.709" y="170.968" width="64.5161" height="290.323" rx="32.2581"
+                transform="rotate(90 438.709 170.968)" fill="#FF8E20"></rect>
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M93.5481 235.484C111.364 235.484 125.806 221.041 125.806 203.226C125.806 185.41 111.364 170.968 93.5481 170.968C75.7325 170.968 61.29 185.41 61.29 203.226C61.29 221.041 75.7325 235.484 93.5481 235.484Z"
+                fill="#FF8E20"></path>
+              <rect x="61.29" y="332.259" width="64.5161" height="290.323" rx="32.2581"
+                transform="rotate(-90 61.29 332.259)" fill="white"></rect>
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M406.451 267.742C388.635 267.742 374.193 282.184 374.193 300C374.193 317.815 388.635 332.258 406.451 332.258C424.267 332.258 438.709 317.815 438.709 300C438.709 282.184 424.267 267.742 406.451 267.742Z"
+                fill="white"></path>
+            </svg>
+            <h3 class="mt-3 text-2xl font-bold text-left">Upgrade to <span style="color:#ff8b1a;">Personal Pro</span>
+              plan</h3>
+            <p class="my-4 text-lg text-left ">For solo creators who want to do even more.</p>
+            <div class="flex my-3 align-bottom justify-left">
+              <h5 class="text-4xl font-bold">$39 </h5>
+              <span class="pt-3 text-base font-bold"> / month</span>
+            </div>
+            <h6 class="pt-1 mb-4 text-lg font-semibold text-left">Everything in Personal, plus:
+            </h6>
+            <ul class="">
+              <li class="flex mb-1 align-middle justify-left text-medium">
+                <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4 mt-1 mr-2" fill="none" stroke-width="2px" stroke-linecap="round"
+                  stroke-linejoin="round" role="presentation">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>Branding removed
+              </li>
+              <li class="flex mb-1 align-middle justify-left text-medium">
+                <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4 mt-1 mr-2" fill="none" stroke-width="2px" stroke-linecap="round"
+                  stroke-linejoin="round" role="presentation">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>View incomplete submissions
+              </li>
+              <li class="flex mb-1 align-middle justify-left text-medium">
+                <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4 mt-1 mr-2" fill="none" stroke-width="2px" stroke-linecap="round"
+                  stroke-linejoin="round" role="presentation">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>In-depth drop off analytics
+              </li>
+              <li class="flex mb-1 align-middle justify-left text-medium">
+                <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4 mt-1 mr-2" fill="none" stroke-width="2px" stroke-linecap="round"
+                  stroke-linejoin="round" role="presentation">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>Unlimited custom domains
+              </li>
+              <li class="flex mb-1 align-middle justify-left text-medium">
+                <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4 mt-1 mr-2" fill="none" stroke-width="2px" stroke-linecap="round"
+                  stroke-linejoin="round" role="presentation">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>Organize typebots in folders
+              </li>
+              <li class="flex mb-1 align-middle justify-left text-medium">
+                <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4 mt-1 mr-2" fill="none" stroke-width="2px" stroke-linecap="round"
+                  stroke-linejoin="round" role="presentation">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>Unlimited uploads
+              </li>
+            </ul>
+            <div class="inline-block float-right btn-group mt-7">
+              <button (click)="folderPopup = false"
+                class="px-4 py-2 mr-3 font-bold text-black bg-gray-200 rounded hover:bg-gray-300">
+                Cancel
+              </button>
+              <button class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-800 ">
+                Upgrade
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <!--Folder Modal-->
 
   <!--Create Token Modal-->
   <div *ngIf="apiTokenModal" class="relative z-10">
