@@ -9,7 +9,28 @@ import { CommonModule } from '@angular/common';
 })
 export class Dashboard implements OnInit {
 
-  saveTypebotArray:any = [0,1,2];
+  saveTypebotArray:any = [
+    {
+      icon:'Default',
+      name:'My Typebot',
+      key:0,
+    },
+    {
+      icon:'😀',
+      name:'My Typebot',
+      key:0,
+    },
+    {
+      icon:'😂',
+      name:'My Typebot',
+      key:1,
+    },
+    {
+      icon:'🔧',
+      name:'My Typebot',
+      key:2,
+    },
+  ];
   typeBotCounter:number = 3;
   settingMenu: boolean = false;
   bill: boolean = false;
