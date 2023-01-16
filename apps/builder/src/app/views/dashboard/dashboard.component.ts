@@ -13,22 +13,22 @@ export class Dashboard implements OnInit {
     {
       icon:'Default',
       name:'My Typebot',
-      key:0,
+      status:'not-live',
     },
     {
       icon:'😀',
       name:'My Typebot',
-      key:0,
+      status:'live',
     },
     {
       icon:'😂',
       name:'My Typebot',
-      key:1,
+      status:'not-live',
     },
     {
       icon:'🔧',
       name:'My Typebot',
-      key:2,
+      status:'live',
     },
   ];
   typeBotCounter:number = 3;
@@ -48,17 +48,7 @@ export class Dashboard implements OnInit {
 
   constructor(private router: Router) {}
 
-  ngOnInit(): void {
-    // window.addEventListener('click',function(ev:Event){
-    //   document.querySelectorAll('.typebot-option').forEach((el:any)=>{
-    //     if(ev.target){
-    //       if(!el.classList.contains('hidden')){
-    //         el.classList.add('hidden');
-    //       }
-    //     }
-    //   })
-    // })
-  }
+  ngOnInit(): void {}
 
 
   navigate(links: any[]) {
@@ -174,7 +164,7 @@ export class Dashboard implements OnInit {
 
   createWorkSpace(){
     this.workspace.push({
-      name:'My Workspace'
+      name:'My Workspace',
     })
     let data = this.workspace[this.workspace.length-1];
     let el = document.getElementById('update-workspace') as HTMLSpanElement;
@@ -213,18 +203,18 @@ export class Dashboard implements OnInit {
     }
   }
 
-  duplicateWorkspace(index:any){
-    this.saveTypebotArray.push(Number(index)+1);
+  duplicateWorkspace(typebot:any){
+    this.saveTypebotArray.push({
+      icon:typebot.icon,
+      name:typebot.name,
+      status:'not-live',
+      key:this.saveTypebotArray.length,
+    });
   }
 
   deleteWorkspace(index:any){
-    console.log(index)
-
-    this.saveTypebotArray.forEach((num:any) => {
-    console.log(num)
-
-      if(index == num){
-        console.log(num)
+    this.saveTypebotArray.forEach((data:any,key:any) => {
+      if(index == key){
         this.saveTypebotArray.splice(index,1);
       }
     });
