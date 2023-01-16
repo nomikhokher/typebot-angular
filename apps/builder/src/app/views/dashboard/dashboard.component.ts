@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 })
 export class Dashboard implements OnInit {
 
-  saveTypebotArray:any = [1,2,3];
+  saveTypebotArray:any = [0,1,2];
   typeBotCounter:number = 3;
   settingMenu: boolean = false;
   bill: boolean = false;
@@ -182,7 +182,6 @@ export class Dashboard implements OnInit {
 
   @HostListener("document:click", ['$event'])
   clicked(event:any) {
-    console.log(event)
     if(!event.target.classList.contains('dontHide')){
       document.querySelectorAll('.option-btn').forEach((btn:any)=>{
         btn.classList.remove('bg-gray-200');
@@ -192,6 +191,24 @@ export class Dashboard implements OnInit {
       })
     }
   }
+
+  duplicateWorkspace(index:any){
+    this.saveTypebotArray.push(Number(index)+1);
+  }
+
+  deleteWorkspace(index:any){
+    console.log(index)
+
+    this.saveTypebotArray.forEach((num:any) => {
+    console.log(num)
+
+      if(index == num){
+        console.log(num)
+        this.saveTypebotArray.splice(index,1);
+      }
+    });
+  }
 }
+
 
 

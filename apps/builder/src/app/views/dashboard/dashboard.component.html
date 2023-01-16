@@ -142,10 +142,10 @@
           </svg>
         </button>
         <ul [attr.data-option]="typebot.key" class="absolute -right-36 py-2 bg-white border rounded-lg shadow-lg top-16 w-full max-w-[200px] typebot-option hidden dontHide z-10">
-          <li class="cursor-pointer flex items-center gap-2 px-4 py-1 hover:bg-gray-100 dontHide">
+          <li (click)="duplicateWorkspace(typebot.key)" class="cursor-pointer flex items-center gap-2 px-4 py-1 hover:bg-gray-100 dontHide">
             Duplicate
           </li>
-          <li class="text-red-500 flex items-center gap-2 px-4 py-1 hover:bg-gray-100 cursor-pointer dontHide">
+          <li (click)="deleteWorkspace(typebot.key)" class="text-red-500 flex items-center gap-2 px-4 py-1 hover:bg-gray-100 cursor-pointer dontHide">
             Delete
           </li>
         </ul>
