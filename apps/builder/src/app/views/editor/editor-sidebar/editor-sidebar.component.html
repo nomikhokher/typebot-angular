@@ -7,7 +7,7 @@
     <div class="w-full">
       <div class="flex items-center justify-end">
         <button (click)="sidePanelClick()" *ngIf="sidePanel" type="button"
-          class="cursor-pointer tooltip-sec rounded-lg border-gray-200 border p-0.5 flex items-center justify-center w-8 h-8"
+          class="cursor-pointer tooltip-sec rounded-lg bg-gray-100 p-0.5 flex items-center justify-center w-8 h-8 hover:bg-gray-200"
           aria-label="Lock">
           <svg viewBox="0 0 24 24" focusable="false" class="w-4 h-4 text-black" fill="none" stroke="currentColor"
             stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -16,9 +16,9 @@
           </svg>
           <span class="tooltiptext-sec">Lock sidebar</span>
         </button>
-        <a title="" *ngIf="sidePanel==false" (click)="sidePanelClick()" class="cursor-pointer tooltip-sec rounded-lg border-gray-200 border p-0.5 flex items-center justify-center
-        w-8 h-8">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24"
+        <a title="" *ngIf="sidePanel==false" (click)="sidePanelClick()" class="cursor-pointer tooltip-sec rounded-lg bg-gray-100 p-0.5 flex items-center justify-center
+        w-8 h-8 hover:bg-gray-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-black" fill="none" viewBox="0 0 24 24"
             stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round"
               d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
@@ -33,21 +33,21 @@
         [cdkDropListData]="groupBlock.blocks"
         [cdkDropListEnterPredicate]="noReturnPredicate"
          [cdkDropListSortingDisabled]="true"
-        class="block pt-5 pb-2 overflow-hidden"
+        class="block pt-3 pb-2 overflow-hidden"
         id="fixed-list"
       >
-        <label class="font-base text-gray-600 font-medium pl-1.5 mb-2 capitalize">{{ groupBlock.name }}</label>
+        <label class="text-base text-gray-600 font-medium mb-2 capitalize">{{ groupBlock.name }}</label>
         <div class="grid grid-cols-2 gap-3 mt-2">
           <div class="w-full" *ngFor="let block of groupBlock.blocks">
             <div class="w-full h-10 rounded-lg bg-slate-100 hover:shadow-md">
               <div
                 cdkDrag
                 (cdkDragStarted)="cdkDragStarted($event)"
-                class="bg-slate-50  border border-slate-300 hover:shadow-md w-full rounded-lg py-2.5 h-10 cursor-pointer"
+                class="bg-slate-50  border border-slate-300 hover:shadow-md w-full rounded-lg h-10 cursor-pointer flex items-center"
                 [id]="block.id"
               >
                 <div class="draggable-custom-placeholder" *cdkDragPlaceholder></div>
-                <div class="flex items-center w-full gap-2 px-4 text-sm justify-left">
+                <div class="flex items-center w-full gap-2 px-4 text-base justify-left">
                   <img [src]="prefilledData[block.type].svg" class="w-4 h-4" />
                   <p class="mb-0">{{prefilledData[block.type].label}}</p>
                 </div>
