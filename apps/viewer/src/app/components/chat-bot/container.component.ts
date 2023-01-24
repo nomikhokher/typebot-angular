@@ -20,6 +20,7 @@ export class ContainerComponent implements OnInit {
       'url_input',
       'date_input',
       'phone_number_input',
+      'file_input',
     ],
   };
   loadingBot: boolean = false;

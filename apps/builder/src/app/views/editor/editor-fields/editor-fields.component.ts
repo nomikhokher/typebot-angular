@@ -154,7 +154,7 @@ export class EditorFieldsComponent implements OnInit {
       { key: 'buttonTypes', parentKey: '', label: 'Type:', value: buttonTypes, type: 'dropdown'},
       { key: 'isEnabled', parentKey: 'customIcon', label: 'Custom icon?', value: options.customIcon.isEnabled, dependent: { key: 'buttonTypes', parentKey: '', value: 'Icons' }, type: 'radio' },
       { key: 'svg', parentKey: 'customIcon', label: 'Icon SVG:', value: options.customIcon.svg, placeholder: '<svg>...</svg>', dependent: { key: 'isEnabled', parentKey: 'customIcon', value: true }, type: 'text_input' },
-      { key: 'left', parentKey: 'labels', label: '0 label:', value: options.labels.left, placeholder: 'Not likely at all', type: 'text_input'},
+      { key: 'left', parentKey: 'labels', label: '1 label:', value: options.labels.left, placeholder: 'Not likely at all', type: 'text_input'},
       { key: 'right', parentKey: 'labels', label: '4 label:', value: options.labels.right, placeholder: 'Extremely likely', type:'text_input' },
       { key: 'button', parentKey: 'labels', label: 'Button Label:', value: options.labels.button, type: 'text_input' },
     ];
@@ -200,7 +200,4 @@ export class EditorFieldsComponent implements OnInit {
       { key: 'button', parentKey: 'labels', label: 'Button Label:', value: options.labels.button, type: 'text_input'},
     ]
   }
-
-
-
 }
