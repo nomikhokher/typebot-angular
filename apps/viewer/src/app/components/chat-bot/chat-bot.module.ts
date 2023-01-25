@@ -10,6 +10,7 @@ import { EmailInputComponent } from '../fields/email-input/email-input.component
 import { DateInputComponent } from '../fields/date-input/date-input.component';
 import { PhoneInputModule } from '../fields/phone-input/phone-input.module';
 import { ChoiceInputComponent } from '../fields/choice-input/choice-input.component';
+import { FileInputComponent } from '../fields/file-input/file-input.component';
 
 import { SafePipe } from '../../pipes/safe.pipe';
 import { HtmlPipe } from '../../pipes/html.pipe';
@@ -23,6 +24,7 @@ import { HtmlPipe } from '../../pipes/html.pipe';
     EmailInputComponent,
     DateInputComponent,
     ChoiceInputComponent,
+    FileInputComponent,
     SafePipe,
     HtmlPipe,
   ],

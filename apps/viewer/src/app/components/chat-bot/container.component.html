@@ -54,7 +54,7 @@
             <iframe *ngIf="iframeCheck === false" [src]="bot?.content.url | safe"></iframe>
           </div>
           <div id="{{bot.type}}" *ngIf="bot?.type === 'audio'"
-            class="w-fit p-4 rounded-lg bg-gray-50 ">
+            class="p-4 rounded-lg w-fit bg-gray-50 ">
             <audio class="" [src]="bot.content.url | safe" id="viewer_audio" controls>
             </audio>
           </div>
@@ -93,6 +93,9 @@
           <div *ngIf="bot?.type === 'choice_input'" class="w-full {{bot?.type}}-main">
             <app-choice-input (callbackFunction)="choiceInputFlow($event)" (nextStep)="renderNextStep()"
               [items]="bot.items" [multipleChoice]="bot.options.isMultipleChoice"></app-choice-input>
+          </div>
+          <div *ngIf="bot?.type === 'file_input'" class="w-full {{bot?.type}}-main">
+            <app-file-input></app-file-input>
           </div>
           <div *ngIf="bot.type === 'error'" class="w-full {{bot?.type}}-main">
             <p class="p-4 mt-3 rounded-lg bg-gray-50 w-fit">

@@ -8,10 +8,9 @@ import { AppComponent } from './app.component';
 import { ViewChatModule } from './components/view_chat/view_chat.module';
 
 import { HttpClientModule } from '@angular/common/http';
-import { FileInputComponent } from './components/fields/file-input/file-input.component';
 
 @NgModule({
-  declarations: [AppComponent, FileInputComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
