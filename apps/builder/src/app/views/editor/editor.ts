@@ -132,10 +132,16 @@ export const structuredBlocks: GroupStructuredBlock[] = [
       {
         id: uuid(),
         options: {
-          currency: 'USD',
-          labels: { button: 'Pay', success: 'Success' },
+          labels: {
+            button: 'Upload',
+            placeholder:
+              '<strong>Click to upload</strong> or drag and drop<br> (size limit: 10MB)',
+          },
+          isMultipleAllowed: false,
+          isRequired: true,
+          sizeLimit: 10,
         },
-        type: 'payment_input',
+        type: 'file_input',
       },
       {
         id: uuid(),
@@ -157,16 +163,10 @@ export const structuredBlocks: GroupStructuredBlock[] = [
       {
         id: uuid(),
         options: {
-          labels: {
-            button: 'Upload',
-            placeholder:
-              '<strong>Click to upload</strong> or drag and drop<br> (size limit: 10MB)',
-          },
-          isMultipleAllowed: false,
-          isRequired: true,
-          sizeLimit: 10,
+          currency: 'USD',
+          labels: { button: 'Pay', success: 'Success' },
         },
-        type: 'file_input',
+        type: 'payment_input',
       },
     ],
   },
