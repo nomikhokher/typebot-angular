@@ -147,6 +147,7 @@ export const structuredBlocks: GroupStructuredBlock[] = [
         id: uuid(),
         options: {
           buttonTypes: 'Numbers',
+          singleClick: false,
           customIcon: {
             isEnabled: false,
             svg: '',

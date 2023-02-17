@@ -1,0 +1,7 @@
+.selected-rating svg{
+  fill:rgb(37 99 235);
+}
+.button-selected-rating{
+  background-color:rgb(37 99 235);
+  color: white;
+}

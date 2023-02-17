@@ -11,6 +11,7 @@ import { DateInputComponent } from '../fields/date-input/date-input.component';
 import { PhoneInputModule } from '../fields/phone-input/phone-input.module';
 import { ChoiceInputComponent } from '../fields/choice-input/choice-input.component';
 import { FileInputComponent } from '../fields/file-input/file-input.component';
+import { RatingInputComponent } from '../fields/rating-input/rating-input.component';
 
 import { SafePipe } from '../../pipes/safe.pipe';
 import { HtmlPipe } from '../../pipes/html.pipe';
@@ -25,6 +26,7 @@ import { HtmlPipe } from '../../pipes/html.pipe';
     DateInputComponent,
     ChoiceInputComponent,
     FileInputComponent,
+    RatingInputComponent,
     SafePipe,
     HtmlPipe,
   ],
