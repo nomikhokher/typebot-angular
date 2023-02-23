@@ -97,7 +97,7 @@
           <div *ngIf="bot?.type === 'file_input'" class="w-full {{bot?.type}}-main">
             <app-file-input (nextStep)="renderNextStep()"></app-file-input>
           </div>
-          <div class="w-full {{bot?.type}}-main">
+          <div *ngIf="bot?.type === 'rating_input'" class="w-full {{bot?.type}}-main">
             <app-rating-input (nextStep)="renderNextStep()"  [data]="bot"></app-rating-input>
           </div>
           <div *ngIf="bot.type === 'error'" class="w-full {{bot?.type}}-main">

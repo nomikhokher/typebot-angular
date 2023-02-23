@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class FileInputComponent implements OnInit {
   @Output() nextStep = new EventEmitter();
+  fileUploaded : boolean = false;
   constructor() { }
 
   ngOnInit(): void {
@@ -14,6 +15,7 @@ export class FileInputComponent implements OnInit {
 
 
   NextStep(e:any){
+    this.fileUploaded = true;
     this.nextStep.emit();
   }
 

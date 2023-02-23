@@ -1,4 +1,4 @@
-.selected-rating svg{
+::ng-deep .selected-rating svg{
   fill:rgb(37 99 235) ;
   stroke: rgb(37 99 235);
 }
