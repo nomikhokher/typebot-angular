@@ -32,6 +32,7 @@ export class RadioFieldComponent implements OnInit {
       this.block.options[this.data.key] = event.target.checked;
     }
     this.editorService.setBlock(this.block);
+    console.log(this.block)
     // (document.getElementById(this.block.id) as HTMLElement).style.height = '150px';
   }
 

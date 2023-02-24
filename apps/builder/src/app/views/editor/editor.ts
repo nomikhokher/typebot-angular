@@ -146,9 +146,9 @@ export const structuredBlocks: GroupStructuredBlock[] = [
       {
         id: uuid(),
         options: {
-          reason:'Enter rating reason',
+          ratingReason:'Rating label',
           buttonTypes: 'Numbers',
-          singleClick: false,
+          oneClick: false,
           customIcon: {
             isEnabled: false,
             svg: '',

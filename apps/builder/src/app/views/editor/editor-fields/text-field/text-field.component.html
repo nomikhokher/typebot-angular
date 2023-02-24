@@ -1,7 +1,9 @@
 <div class="mb-4 input-field" *ngIf="isShow
 || (data.dependent.parentKey === '' && block.options[data.dependent.key] === data.dependent.value)
 || (data.dependent.parentKey && block.options[data.dependent.parentKey][data.dependent.key] === data.dependent.value)">
-  <label class="block mb-1 text-base font-medium text-gray-700 dark:text-gray-300">
+  <label
+    id="{{data.id?data.id:'text-input-label'}}"
+    class="block mb-1 text-base font-medium text-gray-700 dark:text-gray-300">
     {{ data.label }}</label>
   <div class="flex items-center">
     <input [type]="data.inputType ? data.inputType : 'text'" [placeholder]="data.placeholder ? data.placeholder : ''" class="block w-full h-10 p-2 text-sm text-gray-700 border border-gray-300 rounded-lg bg-gray-50

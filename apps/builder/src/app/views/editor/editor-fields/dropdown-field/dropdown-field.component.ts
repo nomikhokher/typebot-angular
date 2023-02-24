@@ -31,6 +31,10 @@ export class DropdownFieldComponent{
       this.block.options[this.data.key] = event.target.value;
     }
     this.editorService.setBlock(this.block);
+    let el = document.getElementById("changeable-label");
+    if(el != null && el != undefined){
+      el.innerText = event.target.value + " label:"
+    }
   }
 
 }

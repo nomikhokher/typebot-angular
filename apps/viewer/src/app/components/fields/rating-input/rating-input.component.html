@@ -1,10 +1,29 @@
 <form class="flex flex-col">
-  <!-- <div class="rating-reason-main">
-    <p>{{data.options.ratingReason}}</p>
-  </div> -->
-  <div *ngIf="defaultView">
+  <div class="rating-reason-main mb-4">
+    <label class="mb-2 font-bold block" [for]="data.options.ratingReason">{{data.options.ratingReason}}</label>
+    <div id="InputToggle" *ngIf="senderView === true" class="flex items-center w-full bg-white rounded-lg shadow-lg">
+      <textarea (keyup.enter)="InputView($event)" (keyup)="changeInputEvent($event)"
+        id="rating-reason"
+        name="rating-reason"
+        class="flex-1 w-full p-4 bg-transparent focus:outline-none text-input2"
+        placeholder="brief about rating..."></textarea>
+      <button id="ratingReasonInputEventBtn" (click)="InputView($event)"
+        class="bg-[#0042DA] app-btn-bg py-2 px-4 justify-center font-semibold rounded-md text-white focus:outline-none flex items-center disabled:opacity-50 disabled:cursor-not-allowed disabled:brightness-100 transition-all filter hover:brightness-90 active:brightness-75 my-2 ml-2 mr-2"
+        disabled>
+        {{data.options.labels.button}}
+      </button>
+    </div>
+    <div (click)="hideInputUserView()" *ngIf="senderView === false"
+      class="flex items-center justify-end w-full gap-2 receiver-view">
+      <span
+        class="bg-[#FF8E21] app-bg-color px-4 py-2 rounded w-full mr-2 whitespace-pre-wrap max-w-full cursor-pointer text-white">{{receiverText}}</span>
+      <figure *ngIf="false" class="relative flex items-center flex-shrink-0 w-9 h-9 "><img
+          class="w-full h-full rounded-full" src="./../../../assets/ViewChat/profile.png" alt=""></figure>
+    </div>
+  </div>
+  <div class="w-fit ml-auto" *ngIf="defaultView">
     <span *ngIf="data.options.labels.left != ''"
-      class="w-full pl-2 mb-2 text-sm rating-label">{{data.options.labels.left}}</span>
+      class="w-full mb-2 text-sm rating-label block">{{data.options.labels.left}}</span>
     <div *ngIf="data.options.buttonTypes == 'Numbers'" class="flex flex-wrap justify-end">
       <button
         *ngFor="let item of ratingArr; let index"
@@ -47,12 +66,9 @@
         </div>
       </div>
     </div>
-    <div *ngIf="data.options.labels.right != ''"
-      class="flex items-center justify-end w-full px-4 mb-2 text-sm">
-      <span>
-        {{data.options.labels.right}}
-      </span>
-    </div>
+    <span *ngIf="data.options.labels.right != ''" class="flex items-center justify-end w-full px-4 mb-2 text-sm">
+      {{data.options.labels.right}}
+    </span>
     <div *ngIf="sendButton" class="flex items-center justify-end w-full">
       <button
         id="send-btn-rating"
