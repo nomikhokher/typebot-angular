@@ -1,7 +1,7 @@
 <form class="flex flex-col">
   <div class="rating-reason-main mb-4">
     <label class="mb-2 font-bold block" [for]="data.options.ratingReason">{{data.options.ratingReason}}</label>
-    <div id="InputToggle" *ngIf="senderView === true" class="flex items-center w-full bg-white rounded-lg shadow-lg">
+    <!-- <div id="InputToggle" *ngIf="senderView === true" class="flex items-center w-full bg-white rounded-lg shadow-lg">
       <textarea (keyup.enter)="InputView($event)" (keyup)="changeInputEvent($event)"
         id="rating-reason"
         name="rating-reason"
@@ -12,7 +12,7 @@
         disabled>
         {{data.options.labels.button}}
       </button>
-    </div>
+    </div> -->
     <div (click)="hideInputUserView()" *ngIf="senderView === false"
       class="flex items-center justify-end w-full gap-2 receiver-view">
       <span
