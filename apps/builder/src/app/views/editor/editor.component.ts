@@ -412,6 +412,7 @@ export class EditorComponent extends Editor {
   }
 
   duplicateElement(type: string, id: string, index: number) {
+    console.log(type, id, index)
     let Groups = this.groupBlocks;
     let copyGroup: any = {};
     let copyBlock: any = {};
@@ -905,5 +906,23 @@ export class EditorComponent extends Editor {
       ele.classList.add('bg-opacity-50');
       ele.setAttribute('disabled','disabled');
     }
+  }
+
+  showShortcuts(eleIndex:any,groupId:any){
+    let element = document.getElementById(eleIndex);
+    let group = document.getElementById(groupId);
+    if(element != undefined && element != null && group != undefined && group != null){
+      if(!element.classList.contains('opacity-1')){
+        element.classList.replace('opacity-0','opacity-1');
+        element.classList.replace('top-0','-top-10');
+        group.classList.add('border');
+        group.classList.add('border-blue-700');
+      }else{
+        element.classList.replace('opacity-1','opacity-0');
+        element.classList.replace('-top-10','top-0');
+        group.classList.remove('border');
+        group.classList.remove('border-blue-700');
+      }
+    } 
   }
 }

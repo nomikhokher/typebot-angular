@@ -34,7 +34,7 @@
 .wrap-div {
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
   border-radius: 10px;
-  transition: box-shadow 200ms ease 0s;
+  transition: border 300ms ease 0s, box-shadow 200ms ease 0s;
   cursor: pointer;
   transform: none !important;
 }
