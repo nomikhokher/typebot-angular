@@ -14,8 +14,8 @@
             <div *ngFor="let b of groupBlocks; let groupIndex = index" [attr.data-group-index]="groupIndex" [id]="b.id"
               [attr.data-jtk-managed]="b.id" data-identifier="group" class="{{b.name}} absolute grouper z-2"
               [style]="('top:'+ b.position.y+'px;left:'+ b.position.x+'px')">
-              <div (click)="showShortcuts('shortcut-'+groupIndex,b.id)" class="py-4 bg-white single-group wrap-div w-72 relative">
-                <div #shortcutsDiv [id]="'shortcut-'+groupIndex" class="touch-none opacity-0 flex items-center absolute right-0 top-0 shadow bg-white border rounded ease-in-out delay-300 transition-all duration-300">
+              <div (click)="showShortcuts('shortcut-'+groupIndex,b.id)" class="py-4 bg-white single-group wrap-div w-72 relative  z-20">
+                <div #shortcutsDiv [id]="'shortcut-'+groupIndex" class="shortcuts-block -z-10 touch-none opacity-0 flex items-center absolute right-0 top-0 shadow bg-white border rounded ease-in-out delay-300 transition-all duration-300">
                   <button (click)="showRightBar()" type="button"
                     class="play-button rounded p-1.5 w-fit cursor-pointer hover:bg-gray-100"
                     aria-label="Preview bot from this group">
@@ -24,7 +24,7 @@
                       <polygon points="5 3 19 12 5 21 5 3"></polygon>
                     </svg>
                   </button>
-                  <button class="duplicate-button rounded p-1.5 w-fit cursor-pointer hover:bg-gray-100">
+                  <button (click)="duplicateElement('group', 'group-'+b.id, groupIndex)" class="duplicate-button rounded p-1.5 w-fit cursor-pointer hover:bg-gray-100">
                     <svg viewBox="0 0 24 24" focusable="false" class="w-3.5 h-3.5" fill="transparent" stroke="black"
                       stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                       <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>

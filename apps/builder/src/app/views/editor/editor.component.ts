@@ -88,6 +88,16 @@ export class EditorComponent extends Editor {
       }
     });
 
+    let containerBox = document.getElementsByClassName('recieveDragedBox')[0];
+    containerBox.addEventListener('click',function(){
+      document.querySelectorAll('.shortcuts-block').forEach((el)=>{
+        el.classList.replace('-top-10','top-0');
+        el.classList.replace('opacity-1','opacity-0');
+      })
+      document.querySelectorAll('.grouper').forEach((el)=>{
+        el.classList.remove('popover-outline-style');
+      })
+    })
 
     this.createInstance(this.wrapper);
 
@@ -915,13 +925,11 @@ export class EditorComponent extends Editor {
       if(!element.classList.contains('opacity-1')){
         element.classList.replace('opacity-0','opacity-1');
         element.classList.replace('top-0','-top-10');
-        group.classList.add('border');
-        group.classList.add('border-blue-700');
+        group.classList.add('popover-outline-style');
       }else{
         element.classList.replace('opacity-1','opacity-0');
         element.classList.replace('-top-10','top-0');
-        group.classList.remove('border');
-        group.classList.remove('border-blue-700');
+        group.classList.remove('popover-outline-style');
       }
     } 
   }
