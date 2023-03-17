@@ -12,6 +12,20 @@ import { HeaderBarModule } from './views/header/header-bar.module';
 import { CreateModule } from './views/create/create.module';
 
 import { HttpClientModule } from '@angular/common/http';
+
+
+/*Firebase*/
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+/*Firebase End */
+
+/* Enviroment File*/
+import { environment } from '../environments/environment';
+
+
 @NgModule({
   declarations: [AppComponent, Dashboard],
   imports: [
@@ -24,6 +38,11 @@ import { HttpClientModule } from '@angular/common/http';
     BillingModule,
     CreateModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
   ],
   exports: [AppRoutingModule, CommonModule],
   providers: [],

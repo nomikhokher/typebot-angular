@@ -4,6 +4,16 @@
 
 export const environment = {
   production: false,
+  firebase:{
+    apiKey: "AIzaSyCOgYWl2UIpuRV-LZIzmsbLXQtbjSVQm3E",
+    authDomain: "typebot-angular.firebaseapp.com",
+    databaseURL: "https://typebot-angular-default-rtdb.firebaseio.com",
+    projectId: "typebot-angular",
+    storageBucket: "typebot-angular.appspot.com",
+    messagingSenderId: "1001676389207",
+    appId: "1:1001676389207:web:9c4e04f54ac4e164e0dc12",
+    measurementId: "G-NQP1Y9MRB1"
+  }
 };
 
 /*

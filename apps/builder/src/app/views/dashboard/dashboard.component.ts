@@ -2,6 +2,11 @@ import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+
+/* Services */
+import { AuthService } from '../../services/auth/auth.service';
+/* Services End */
+
 @Component({
   selector: 'dashboard',
   templateUrl: './dashboard.component.html',
@@ -46,7 +51,7 @@ export class Dashboard implements OnInit {
     name:"nomikhokher's workspace",
   }];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService:AuthService) {}
 
   ngOnInit(): void {}
 
@@ -218,6 +223,10 @@ export class Dashboard implements OnInit {
         this.saveTypebotArray.splice(index,1);
       }
     });
+  }
+
+  logOut(){
+    this.authService.SignOut();
   }
 }
 

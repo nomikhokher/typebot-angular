@@ -1,14 +1,4 @@
-svg {
-    width: 1em;
-    height: 1em;
-    line-height: 1em;
-    -webkit-flex-shrink: 0;
-    -ms-flex-negative: 0;
-    flex-shrink: 0;
-    color: currentColor;
-    fill: transparent !important;
-    vertical-align: middle; 
-  }
+
 .small-container{width:400px;
 
     display: -webkit-box;
@@ -30,33 +20,6 @@ svg {
 
 }
 
-.sign-up-btn { 
- 
-    border-radius: 4px;
-    outline: 2px solid transparent;
-    outline-offset: 2px;
-    line-height: 1.2;
-    border: 1px solid #e5e7eb;
-    text-align: center;
-    padding: 9px 0;
-    width: 330px;
-    margin-top: 0.5rem;
-
-}
-.sign-up-btn:hover {
-    background: #f3f4f6;
-}
-
-.sign-up-btn span {padding-right: 8px;display: inline-block;position: relative;top: -2px;}
-
-
-.sign-in h2 {font-size: 33px;font-weight: 700;text-align: center;}
-
-.sign-in {text-align: center;}
-
-.sign-in p {margin: 6px 0;font-size: 17px;}
-
-.sign-in p a {color:#0042da; text-decoration:underline;} 
 .email-field {
     margin-top: 15px;
 }

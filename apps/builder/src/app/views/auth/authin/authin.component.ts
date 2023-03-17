@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../services/auth/auth.service';
 
 @Component({
   selector: 'authin',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./authin.component.css'],
 })
 export class Authin implements OnInit {
-  constructor(private router: Router) {
+  constructor(private router: Router,private authSerivce:AuthService) {
     // ...
   }
 
@@ -15,5 +16,17 @@ export class Authin implements OnInit {
 
   navigate(links: any[]) {
     this.router.navigate(links);
+  }
+
+  loginInWithGoogle(){
+    this.authSerivce.GoogleAuth();
+  }
+
+  loginInWithGithub(){
+    this.authSerivce.GithubLogin();
+  }
+
+  loginWithFacebook(){
+    this.authSerivce.FacebookLogin();
   }
 }
